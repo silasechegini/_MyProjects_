@@ -1,0 +1,395 @@
+body{        
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    /* line-height: 200px; */
+}
+
+#container {
+    z-index:2;
+    text-align: center;
+}
+#container-1 {
+    width: 70%;
+    margin: auto;
+    padding: 2em 0 5em 0;
+}
+#container-2 {
+    background-color: lightgray;
+    width: 100%;
+    background-size: cover;
+    margin: auto auto auto auto;
+    padding: 5em 0 0 0;
+}
+
+#container-2-inner {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-3 {
+    /* background-color: lightslategrey; */
+    color: black;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+    position: relative;
+    left: 0;
+}
+
+.container-4 {
+    text-align: center;
+    background-color: lightslategrey;
+    color: black;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2em 0 2em 0;
+    position: relative;
+    left: 0;
+}
+
+#container-4-inner {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 1.5em;
+}
+
+.container-5 {
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+#heading { top: 0;}
+.fixed-footer {bottom: 0;}
+
+#heading, .fixed-footer {
+    padding: 1.5em 0 .5em 0;
+    text-align: center;
+    left: 0;
+    width: 100%; 
+    position: fixed;
+    z-index:1;
+    padding: 10px 0;
+    background-color: grey;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+nav a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    padding: 7px 25px;
+    display: inline-block;
+}
+
+#first-div{ 
+    position: absolute;
+}
+
+#first-div, #first-div-hidden { 
+    background: url(../images/background10.jpg) no-repeat fixed; 
+    background-size: cover;
+    width: 100%;
+    left: 0;
+    height: 500px;
+}
+
+.first-div-inner { 
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-style: italic;
+    line-height: 2em;
+}
+
+.first-div-p1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-size: 2em;
+} 
+
+.no-wrap {
+    clear: both;
+}
+
+.img-right-float {
+    float: right;
+    margin: 5em 0 5em 2em;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.img-left-float {
+    /* display: block; */
+    float: left;
+    margin: 3em 5em 2em 0;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 10px 10px 5px grey; */
+}
+
+.img-inline {
+    /* margin: 2em 10% 0 0; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.justify {
+    /* text-indent: 2em; */
+    line-height: 1.2em;
+    letter-spacing: 0;
+    text-align: justify;
+    margin: 3em 0 2em 0;
+}
+
+.div-float-right {
+    /* border-style: solid; */
+    float: right;
+    width: 65%;
+}
+
+.div-float-left {
+    /* border-style: solid; */
+    float: left;
+    width: 25%;
+}
+
+.grid {
+    display: grid;
+    grid: auto / auto auto auto;
+    grid-gap: 5px;
+    padding: 10px;
+    width: 20%;
+    margin: 2em auto auto auto;
+}
+
+.grid_ {
+    margin: 10em auto 10em auto;
+}
+
+.inner-paragraphs {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2em;
+}
+
+.container-description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 40%; 
+    margin: auto auto auto auto;
+}
+
+.zoom {
+    transition: transform .9s; /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.hide {
+    display: none;
+}
+  
+.myDIV:hover + .hide {
+      background-color: grey;
+      display: block;
+}
+
+img {
+    vertical-align: middle;
+}
+  
+  /* Hide the images by default */
+.mySlides {
+    display: none;
+}
+  
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+  
+  /* Next & previous buttons */
+
+.prev {
+    left: 15%;
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+  
+  /* Position the "next button" to the right */
+.next {
+    right: 15%;
+    border-radius: 3px 0 0 3px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    color: white;
+    background-color: black;
+}
+  
+  /* Number text (1/3 etc) */
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+  /* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+  
+  /* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+  
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.heading-1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.heading-2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.heading-3 {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+.avatar:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds  */
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    width: 160px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    /* z-index: 1; */
+    bottom: 125%;
+    left: 50%;
+    margin-left: 10px;
+}
+
+#about {
+    width: 50%;
+    margin: auto auto auto auto;
+    background-color: skyblue;
+}
+
+/* The actual popup (appears on top) */
+.abouttext {
+    text-align: justify;
+    border-radius: 6px;
+    margin: 5%;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+.popup .hide {
+    visibility: hidden;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
