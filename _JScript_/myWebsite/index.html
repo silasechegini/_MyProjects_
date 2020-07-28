@@ -8,24 +8,29 @@
 
 <body>
     <div id="heading">
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#">BLOG</a>
+        <nav class="home-nav">
+            <a href="./index.html">HOME</a>
+            <a href="./about.html">ABOUT</a>
         </nav>
     </div>
 
     <div id="container">
         <div id="first-div" class="no-wrap">
             <div class="first-div-inner">
-                <p> Hey, I'm <br> <span class="first-div-p1"> <span>&#8212;&#8212;</span> NGOZI SILAS E.
-                        <span>&#8212;&#8212;</span>
+                <p> Hey, I'm <br> <span class="first-div-p1"> <span class="em-dash">&#11835;</span> NGOZI SILAS E.
+                    <span class="em-dash">&#11835;</span>
                     </span></p>
             </div>
             <div>
-                <a href="about.html"><img src="images/myAvatar.gif" alt="my avatar" id="myAvatar" class="avatar popup" onmouseover="pop_up()" onmouseout="hide()"></a>
+                <a href="about.html"><img src="images/myAvatar.gif" alt="my avatar" id="myAvatar" class="avatar popup"
+                        onmouseover="pop_up()" onmouseout="hide()"></a>
                 <div class="popup">
                     <span class="popuptext hidden" id="myPopup">Click to know about me!</span>
                 </div>
+            </div>
+            <div>
+                <a class="styledComponents__DownloadButton-phudex-3 fmAORt button" rel="noopener noreferrer"
+                    href="./Ngozi's__Resume.pdf" target="_blank">Download my Resume</a>
             </div>
         </div>
         <div id="first-div-hidden" class="hidden no-wrap">
@@ -37,29 +42,39 @@
             <div>
                 <img src="images/myAvatar.gif" alt="my avatar" height="10%" width="10%">
             </div>
+
+            <div>
+                <a class="styledComponents__DownloadButton-phudex-3 fmAORt button" rel="noopener noreferrer"
+                    href="/static/resume-e7ffd105a07a9a0dcc6e577bb6c01abb.pdf" target="_blank">Download my Resume</a>
+            </div>
         </div>
 
         <div id="container-1">
             <p>
-            <h1><span>&#8212;&#8212;</span> Here's what I've done so far <span>&#8212;&#8212;</span></h1>
+            <h1><span>&#11835;</span> Here's what I've done so far <span >&#11835;</span></h1>
             </p>
 
             <div>
                 <div class="div-float-left">
-                    <a href="#"><img class="img-left-float" src="images/Freelance.jpg"
-                            alt="Freelance" height="200" width="250"></a>
+                    <a href="#"><img class="img-left-float" src="images/Freelance.jpg" alt="Freelance" height="200"
+                            width="250"></a>
                 </div>
                 <div class="div-float-right">
                     <p class="justify">
                         <span class="heading-1">Self Employed</span> <br>
                         <span class="heading-2">Software Developer; <i>since November 2019</i></span> <br>
                         <span class="heading-3">Ottawa, Ontario</span> <br><br>
-                        In the past year, I have been in the business of self development, picking up the required tools and
-                        technology for front-end development. The next phase is to delve into the required tools and 
-                        technology for back-end development, and end up a full stack developer. Right now, I have mastered 
-                        HTML and CSS, JavaScript and Python. I am in the process of picking up NodeJS and AngularJs to add to my skill set.
-                        I built this website myself from scratch as a self imposed project to test out my HTML,CSS and JavaScript skills.  
-                        On the side, I'm collaborating with peers in the software developement paradigm to build projects just for fun. 
+                        In the past year, I have been in the business of self development, picking up the required tools
+                        and
+                        technology for front-end development. The next phase is to delve into the required tools and
+                        technology for back-end development, and end up a full stack developer. Right now, I have
+                        mastered
+                        HTML and CSS, JavaScript and Python. I am in the process of picking up NodeJS and AngularJs to
+                        add to my skill set.
+                        I built this website myself from scratch as a self imposed project to test out my HTML,CSS and
+                        JavaScript skills.
+                        On the side, I'm collaborating with peers in the software developement paradigm to build
+                        projects just for fun.
                     </p>
 
                 </div>
@@ -73,33 +88,49 @@
                 <div class="div-float-right">
                     <p class="justify">
                         <span class="heading-1">City of Ottawa</span> <br>
-                        <span class="heading-2">Intermediate Systems Developer/Integrator; <i>since November 2019</i></span> <br>
+                        <span class="heading-2">Intermediate Systems Developer/Integrator; <i>since November
+                                2019</i></span> <br>
                         <span class="heading-3">Ottawa, Ontario</span> <br><br>
-                        I joined the Applications Management team at the City of Ottawa in November 2019 as an 
+                        I joined the Applications Management team at the City of Ottawa in November 2019 as an
                         Intermediate Systems Developer/Integrator, focused on managing the City's Microsoft Dynamics 365
-                        Application Online. I came into the team with knowledge of Java, JavaScript, HTML and CSS, C#, 
-                        a bit of python, indepth knowledge of the Microsoft Office 365 Suit, Git and PowerShell. 
-                        I have been exposed to Jenkins, Kubernetes, MS Azure, VMWare and VM Provisioning. <br> My day to day 
-                        in this role involves writing automation scripts in PowerShell to manipulate CRM data, initiating querries, 
-                        exporting solutions from and deploying solutions to Dynamics 365 Online instances, Provisioning of Dynamics 365
-                        instances for organizations within the City, as well as create and manage automation Jobs in Jenkins; 
-                        Write custom plugins that integrate with Microsoft Dynamics 365 in C#, to modify or extend the standard 
-                        behavior of the platform; make modifications to web resources to improve client-side experience and interaction 
+                        Application Online. I came into the team with knowledge of Java, JavaScript, HTML and CSS, C#,
+                        a bit of python, indepth knowledge of the Microsoft Office 365 Suit, Git and PowerShell.
+                        I have been exposed to Jenkins, Kubernetes, MS Azure, VMWare and VM Provisioning. <br> My day to
+                        day
+                        in this role involves writing automation scripts in PowerShell to manipulate CRM data,
+                        initiating querries,
+                        exporting solutions from and deploying solutions to Dynamics 365 Online instances, Provisioning
+                        of Dynamics 365
+                        instances for organizations within the City, as well as create and manage automation Jobs in
+                        Jenkins;
+                        Write custom plugins that integrate with Microsoft Dynamics 365 in C#, to modify or extend the
+                        standard
+                        behavior of the platform; make modifications to web resources to improve client-side experience
+                        and interaction
                         and Ribbon Customizations using JavaScript.
                         <br><br>
                         <span class="heading-2">IT Solutions Analyst; <i>since January 2019</i></span> <br>
                         <span class="heading-3">Ottawa, Ontario</span> <br><br>
-                        I joined the Information Technology Services team of the City of Ottawa in January 2019 as an IT 
-                        solutions Analyst. The unique aspect of my Job as a solutions analysts was the level of expectation. 
-                        I was required to be knowledgeable in a range of software products that have the potential to meet business needs
-                        of the City. This role required me to be proficient in Microsoft Office 365 Suit, PowerShell scripting and Active Directory.
-                        I also required some knowledge of C# and JavaScript. 
-                        Most of the daily tasked i was concerned with included creating and maintaining security groups, user accounts, group accounts, 
-                        and the likes, in Active directory. I also created and maintained SharePoint sites; monitored, deployed, decommissioned and maintained 
-                        networked devices like - Printers, Servers, desktops and laptops etc. on the city's enterprise network city wide. 
-                        I was also a part of the team responsible for the smooth onboarding of new employees which entailed creating network user accounts 
-                        email activation, activation of access cards and tokens, workstation configuration, among all others. Other responsibilities included 
-                        pushing of security patches and updates, and group policy updates (GPO) to all networked devices city wide. For the most part, PowerShell scripts remained
+                        I joined the Information Technology Services team of the City of Ottawa in January 2019 as an IT
+                        solutions Analyst. The unique aspect of my Job as a solutions analysts was the level of
+                        expectation.
+                        I was required to be knowledgeable in a range of software products that have the potential to
+                        meet business needs
+                        of the City. This role required me to be proficient in Microsoft Office 365 Suit, PowerShell
+                        scripting and Active Directory.
+                        I also required some knowledge of C# and JavaScript.
+                        Most of the daily tasked i was concerned with included creating and maintaining security groups,
+                        user accounts, group accounts,
+                        and the likes, in Active directory. I also created and maintained SharePoint sites; monitored,
+                        deployed, decommissioned and maintained
+                        networked devices like - Printers, Servers, desktops and laptops etc. on the city's enterprise
+                        network city wide.
+                        I was also a part of the team responsible for the smooth onboarding of new employees which
+                        entailed creating network user accounts
+                        email activation, activation of access cards and tokens, workstation configuration, among all
+                        others. Other responsibilities included
+                        pushing of security patches and updates, and group policy updates (GPO) to all networked devices
+                        city wide. For the most part, PowerShell scripts remained
                         the useful tool for carrying out these operations seemlessly.
 
                     </p>
@@ -111,24 +142,35 @@
                     <a href="https://www.solananetworks.com/" target="_blank"><img class="img-left-float"
                             src="images/solana_1.png" alt="Solana Networks" height="200" width="250"></a>
                 </div>
-                
+
                 <div class="div-float-right">
                     <p class="justify">
                         <span class="heading-1">Solana Networks</span> <br>
-                        <span class="heading-2">Wireless Software Developer/Researcher; <i>November 2018 - May 2019</i></span> <br>
+                        <span class="heading-2">Wireless Software Developer/Researcher; <i>November 2018 - May
+                                2019</i></span> <br>
                         <span class="heading-3">Ottawa, Ontario</span> <br><br>
-                        I joined the Wireless software research team at Solana Networks in November 2019 as a Wireless Software
-                        developer and researcher, focused on building simulators and writing algorithms for Geo-location estimation
+                        I joined the Wireless software research team at Solana Networks in November 2019 as a Wireless
+                        Software
+                        developer and researcher, focused on building simulators and writing algorithms for Geo-location
+                        estimation
                         in wireless ad-hoc environments.
-                        I came into the team with knowledge of the BGP, TCP and UDP protocols, the OSI model, Network Simulators, 
-                        Wireless Networks, Mobile Ad-Hoc Networks (MANETs), C++, C, Python and Git which were required for this role. <br>
-                        I was able to apply my software developement skills to building a mobile ad-hoc network (MANET) simulator, 
-                        following the available OSI model implementation in the OmNet++ network simulator, 
-                        designed and implemented geolocation estimation algorithms in C++ for geolocation triangulation using Received Signal Strength (RSS) and Time of  
-                        Arrival (TOA) methods - all of these implementations were based on research papers published in this field.
-                        Python was the tool i used to automate the experiments in the network simulator and to evaluate the results obtained.  
-                        For every successful implementation of both algorithms, test were carried out in real time on Mobile adhoc network test 
-                        boards and the results obtained were in close range with the simulator implementation upto a 90% degree of accuracy.
+                        I came into the team with knowledge of the BGP, TCP and UDP protocols, the OSI model, Network
+                        Simulators,
+                        Wireless Networks, Mobile Ad-Hoc Networks (MANETs), C++, C, Python and Git which were required
+                        for this role. <br>
+                        I was able to apply my software developement skills to building a mobile ad-hoc network (MANET)
+                        simulator,
+                        following the available OSI model implementation in the OmNet++ network simulator,
+                        designed and implemented geolocation estimation algorithms in C++ for geolocation triangulation
+                        using Received Signal Strength (RSS) and Time of
+                        Arrival (TOA) methods - all of these implementations were based on research papers published in
+                        this field.
+                        Python was the tool i used to automate the experiments in the network simulator and to evaluate
+                        the results obtained.
+                        For every successful implementation of both algorithms, test were carried out in real time on
+                        Mobile adhoc network test
+                        boards and the results obtained were in close range with the simulator implementation upto a 90%
+                        degree of accuracy.
                     </p>
                 </div>
             </div>
@@ -138,16 +180,20 @@
                     <a href="https://www.novanetworks.com/" target="_blank"><img class="img-left-float"
                             src="images/nova.png" alt="Nova Networks" height="200" width="250"></a>
                 </div>
-                
+
                 <div class="div-float-right">
                     <p class="justify">
                         <span class="heading-1">Nova Networks</span> <br>
                         <span class="heading-2">Solutions Analyst; <i>May 2018 - January 2019</i></span> <br>
                         <span class="heading-3">Ottawa, Ontario</span> <br><br>
-                        Nova Networks was the first place i worked after graduating from a masters program at Carleton University. 
-                        Working here taught me to surround myself with people who pushed me to my limits. The challenging work environment 
-                        alongside brilliant engineers, shadowing masterful designers, and helping direct projects laid the foundation for 
-                        my software and network engineering career. I'm grateful for the time I spent with these folks, whose work gave me a 
+                        Nova Networks was the first place i worked after graduating from a masters program at Carleton
+                        University.
+                        Working here taught me to surround myself with people who pushed me to my limits. The
+                        challenging work environment
+                        alongside brilliant engineers, shadowing masterful designers, and helping direct projects laid
+                        the foundation for
+                        my software and network engineering career. I'm grateful for the time I spent with these folks,
+                        whose work gave me a
                         glimpse into the challenges and rewards of a startup employee's life.
                     </p>
                 </div>
@@ -157,30 +203,27 @@
 
         <div class="no-wrap" id="container-2">
             <p>
-            <h1><span>&#8212;&#8212;</span> Get into my brain <span>&#8212;&#8212;</span></h1>
+            <h1><span>&#11835;</span> Get into my brain <span>&#11835;</span></h1>
             </p>
 
             <p class="container-description">I did a research program at Carleton University on Mobile Ad-Hoc networks
                 and out of it came a thesis and a few papers, which i have shared here (for your eyes only)</p>
 
-            <div id="container-2-inner" class="grid">
+            <div id="container-2-inner" class="grid grid_ grid-0">
                 <div>
                     <a href="https://curve.carleton.ca/4468ee0a-f1fc-4a98-b10c-d810d24d14c2" target="_blanc"><img
-                            id="manet" class="img-inline zoom myDIV" src="images/manet.jpg" alt="MATETs" width="80%"
-                            height="200"></a>
-                    <p class="inner-paragraphs">Thesis: A DHT-based Routing Solution for Hierarchical MANETs</p>
-
+                            id="manet" class="img-inline zoom myDIV" src="images/manet.jpg" alt="MATETs" ></a>
+                    <div class="inner-paragraphs">Thesis: A DHT-based Routing Solution for Hierarchical MANETs</div>
                 </div>
                 <div>
                     <a href="https://ieeexplore.ieee.org/document/8117159" target="_blanc"><img class="img-inline zoom"
-                            src="images/DHT.jpg" alt="DHTs" width="80%" height="200"></a>
-                    <p class="inner-paragraphs">Conference Paper: Evaluating chord over a hierarchical MANET</p>
+                            src="images/DHT.jpg" alt="DHTs"></a>
+                    <div class="inner-paragraphs">Conference Paper: Evaluating chord over a hierarchical MANET</div>
                 </div>
                 <div>
                     <a href="https://www.researchgate.net/publication/327142993_P2P_Overlay_Performance_in_Large-Scale_MANETs/fulltext/5b7cb06692851c1e122686a8/P2P-Overlay-Performance-in-Large-Scale-MANETs.pdf"
-                        target="_blanc"><img class="img-inline zoom" src="images/P2P.jfif" alt="p2p" width="80%"
-                            height="200"></a>
-                    <p class="inner-paragraphs">Journal Paper: P2P Overlay Performance in Large-Scale MANETs</p>
+                        target="_blanc"><img class="img-inline zoom" src="images/P2P.jfif" alt="p2p"></a>
+                    <div class="inner-paragraphs">Journal Paper: P2P Overlay Performance in Large-Scale MANETs</div>
                 </div>
             </div>
 
@@ -188,7 +231,7 @@
 
         <div class="container-3 no-wrap">
             <p>
-            <h1><span>&#8212;&#8212;</span> Pictures speak volumes <span>&#8212;&#8212;</span></h1>
+            <h1><span>&#11835;</span> Pictures speak volumes <span>&#11835;</span></h1>
             </p>
 
             <div class="mySlides">
@@ -421,7 +464,7 @@
     </div>
 
     <div class="container-4 no-wrap">
-        <h1><span>&#8212;&#8212;</span> A few things that drive me <span>&#8212;&#8212;</span></h1>
+        <h1><span>&#11835;</span> A few things that drive me <span>&#11835;</span></h1>
         <div id="container-4-inner">
             <p>Pursue Passions, not Paychecks</p>
             <p>Be Crafty, Lovable, Systematic, and Relentless</p>
@@ -435,26 +478,32 @@
 
     </div>
 
-    <div class="container-5 grid .grid_">
+    <div class="container-5 grid grid__">
         <div>
-            <a href="https://www.linkedin.com/in/silasngozi" target="_blanc"><img id="linkedin" class="img-inline zoom"
-                    src="images/LinkedIn_.jpg" alt="linkedin" width="70%" height="70"></a>
+            <a href="https://www.linkedin.com/in/silasngozi" target="_blanc"><img class="img-inline__ zoom"
+                    src="images/LinkedIn_.jpg" alt="linkedin"></a>
         </div>
         <div>
-            <a href="https://www.facebook.com/silasngee/" target="_blanc"><img class="img-inline zoom"
-                    src="images/facebook.png" alt="facebook" width="70%" height="70"></a>
+            <a href="https://www.facebook.com/silasngee/" target="_blanc"><img class="img-inline__ zoom"
+                    src="images/facebook.png" alt="facebook"></a>
         </div>
         <div>
-            <a href="https://twitter.com/NgoziSilas" target="_blanc"><img class="img-inline zoom" src="images/twitter.png"
-                    alt="p2p" width="70%" height="70"></a>
+            <a href="https://twitter.com/NgoziSilas" target="_blanc"><img class="img-inline__ zoom"
+                    src="images/twitter.png" alt="p2p"></a>
         </div>
-    </div>
-
+        <div>
+            <a href="https://github.com/silasechegini" target="_blanc"><img class="img-inline__ zoom" src="images/github-logo.png"
+                    alt="git" ></a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/ngeesilas/" target="_blanc"><img class="img-inline__ zoom"
+                    src="images/instagram.png" alt="instagram"></a>
+        </div>
     </div>
 
 
     <div class="fixed-footer">
-        <div class="container">Copyright &copy; 2016 Your Company</div>
+        <div class="container">Copyright &copy; 2020 Silas-Harrison Inc. </div>
     </div>
 
     <script src="editor.js"></script>
