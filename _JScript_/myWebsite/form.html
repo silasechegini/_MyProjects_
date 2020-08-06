@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get Feedback</title>
+    <link rel="stylesheet" href="css/formStyle.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+    <div class="form">
+        <form action="sendrequest.php" method="POST" class="feedback">
+            <fieldset>
+                <legend class="legend-style">Contact Information</legend>
+                <div class="contact-block-1">
+                    First name: <br>
+                    <input class="text-input" type="text" name="firstname" placeholder="First" maxlength="40" id="firstname">
+                    <br><br>
+                    Last name: <br>
+                    <input class="text-input" type="text" name="lastname" placeholder="Last" maxlength="40" id="lastname">
+                    <br><br>
+                    Select Country: <br>
+                    <select class="text-input" name="country" id="count" onblur="setZip()">
+                        <option value="0: null">Select One</option>
+                        <option value="1: Object">Australia</option>
+                        <option value="2: Object">Austria</option>
+                        <option value="3: Object">Belgium</option>
+                        <option value="4: Object">Canada</option>
+                        <option value="5: Object">Czech Republic</option>
+                        <option value="6: Object">Denmark</option>
+                        <option value="7: Object">Finland</option>
+                        <option value="8: Object">France</option>
+                        <option value="9: Object">Germany</option>
+                        <option value="10: Object">Greece</option>
+                        <option value="11: Object">Hungary</option>
+                        <option value="12: Object">Italy</option>
+                        <option value="13: Object">Luxembourg</option>
+                        <option value="14: Object">Malaysia</option>
+                        <option value="15: Object">Netherlands</option>
+                        <option value="16: Object">Nigeria</option>
+                        <option value="17: Object">Norway</option>
+                        <option value="18: Object">Poland</option>
+                        <option value="19: Object">Portugal</option>
+                        <option value="20: Object">Puerto Rico</option>
+                        <option value="21: Object">Republic Of Ireland</option>
+                        <option value="22: Object">Romania</option>
+                        <option value="23: Object">Spain</option>
+                        <option value="24: Object">Sweden</option>
+                        <option value="25: Object">Switzerland</option>
+                        <option value="26: Object">United Kingdom</option>
+                        <option value="27: Object">United States</option>
+                        <option value="28: Object">Not Listed</option>
+                    </select>
+                </div>
+
+                <div class="contact-block-2">
+                    Email Address: <br>
+                    <input class="text-input" type="email" name="mail" placeholder="enter email" maxlength="40">
+                    <br><br>
+                    Zip Code:<br>
+                    <label for="zipcode"><input class="text-input" type="text" id="zipcode" name="Zip" maxlength="10" placeholder="xxx xxx" onblur="fillCity2(); fixPostCode()"></label>
+                    <br><br> 
+                    Select City:<br>
+                    <label for="city"><input class="text-input" type="text" id="cityName" name="City" placeholder="enter city name" maxlength="40"></label>
+                    <br><br>
+                </div>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="backCol" onmouseover="mouseOver()" onmouseout="this.style.backgroundColor = 'white'">
+                <legend class="legend-style">Survey</legend>
+                How did you learn about me ? <br>
+                <input type="radio" name="survey" value="Google" id="goog"><label for="goog">Google</label>
+                <input type="radio" name="survey" value="Twitter" id="twit"><label for="twit">Twitter</label>
+                <input type="radio" name="survey" value="linkedin" id="link"><label for="link">linkedin</label>
+                <input type="radio" name="survey" value="facebook" id="face"><label for="face">facebook</label>
+                <br><br>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset>
+                <legend class="legend-style"> Comment </legend>
+
+                <br><br>
+                Comments: <br><br>
+                <label>
+                    <textarea name="comments" id="comm" class="comment" onfocus="onFocus()"
+                        onblur="onBlur(); checkTxt('comm');"></textarea>
+                </label>
+            </fieldset>
+            <br><br>
+            <!-- <button id="submit" type="button" onclick="checkIfEmpty()">Submit Form</button> -->
+            <input id="submission" type="submit" name="submit" value="Submt Form" onclick="checkIfEmpty()">
+        </form>
+
+        <div>
+            <!-- <button style="margin: 2em auto auto auto; display: block;"><a style="text-decoration: none; color: black;" href="index.html">Back</a></button> -->
+            <a class="back-button-link" href="index.html"><button class="back-button"> <span class="inner"> HOME </span></button></a> 
+        </div>
+    </div>
+
+    <script src="./editor.js"></script>
+</body>
+
+</html>

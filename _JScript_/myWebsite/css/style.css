@@ -76,9 +76,9 @@ body{
 
 .container-about-1 {
     background-color: rgb(203, 241, 238);
-    background-size: cover;
+    /* background-size: cover;
     left: 0;
-    right: 0;
+    right: 0; */
 }
 
 .container-about-2 {
@@ -113,8 +113,9 @@ body{
     display: inline-block;
 }
 
-#first-div{ 
+#first-div{
     position: absolute;
+    padding: 2em 0 5em 0;
 }
 
 #first-div, #first-div-hidden { 
@@ -130,7 +131,7 @@ body{
     text-align: center;
     font-size: 2em;
     font-style: italic;
-    line-height: 2em;
+    line-height: .5em;
 }
 
 .first-div-p1 {
@@ -241,7 +242,7 @@ body{
 .container-description {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 40%; 
-    margin: auto auto auto auto;
+    margin: 1em auto 2em auto;
 }
 
 .zoom {
@@ -373,6 +374,8 @@ img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
 
 .avatar:hover {
@@ -393,6 +396,16 @@ img {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.bounce-1 {
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+}
+@keyframes bounce-1 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
 }
 
 .popup {
@@ -453,7 +466,7 @@ img {
 }
 
 .fmAORt {
-    display: flex;
+    display: inline-block;
     cursor: pointer;
     user-select: none;
     text-align: center;
@@ -468,7 +481,7 @@ img {
     -webkit-box-align: center;
     align-items: center;
     overflow: hidden;
-    margin: 20px auto auto auto;
+    margin: 20px auto 20px auto;
     padding: 12px;
     background: khaki;
     transition: all 150ms linear 0s;
@@ -478,8 +491,12 @@ img {
     border-color: initial;
     border-image: initial;
     border-radius: 36px;
-    flex: 0 0 160px;
+    /* flex: 0 0 160px; */
     width: 20%;
+}
+
+.button-div {
+    /* margin: 0 auto auto 20px; */
 }
 
 /* Add animation (fade in the popup) */
@@ -561,15 +578,32 @@ img {
 }
 
 .abouttext_ {
-    font-size: 20px;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .em-dash {
-    font-size:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .em-dash_ {
-    font-size:50px;
-    font-stretch: ultra-expanded;
+    border: solid 2px black;
+    width: 100px;
+    margin: 20px;
+}
+
+.em-dash_white {
+    border: solid 2px white;
+    width: 100px;
+    margin: 20px;
+}
+
+.em-dash_black {
+    border: solid 2px black;
+    width: 100px;
+    margin: 20px;
 }
 /* .back-button .inner {
     cursor: pointer;
@@ -624,7 +658,7 @@ img {
         padding: 2em;
     }
     .img-left-float {
-        margin: auto auto auto auto;
+        margin: 4em auto auto auto;
         float: none;
         border-radius: 25px;
         width: 30%;
@@ -638,17 +672,26 @@ img {
     }
     .home-nav > a {
         font-size: 2.5em;
+        font-weight: bold;
     }
     .back-button {
         font-size: 30px;
         padding: 10px;
         width: 15%;
     }
+    .inner-paragraphs {
+        font-size: 1.5em;
+        font-family: cursive;
+    }
+    #container-4-inner {
+        font-size: 1em;
+    }
+    .container-description {
+        font-size: 2em;
+        width: 80%;
+        font-family: serif;
+    }
+    .abouttext_ {
+        font-size: 60px;
+    }
 }
-
-/* [class*="about-grid-"] {
-    float: left;
-    padding: 15px;
-    max-width: 30%;
-    margin: auto 3% auto auto;
-} */
