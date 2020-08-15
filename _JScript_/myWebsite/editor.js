@@ -137,23 +137,27 @@ function fillCity2() {
   var kingston = ["K7K", "K7L", "K7M", "K7P"];
   var peterborough = ["K9K", "K9L", "K9H", "K9J"];
 
-  if (ottawa.indexOf(zip) >= 0) {
-    document.getElementById("cityName").value = "Ottawa";
-    // document.querySelector('#count').options[4].selected = true;
-  }
-  else if (kingston.indexOf(zip) >= 0) {
-    document.getElementById("cityName").value = "Kingston";
-    // document.querySelector('#count').options[4].selected = true;
-  }
-  else if (peterborough.indexOf(zip) >= 0) {
-    document.getElementById("cityName").value = "Peterborough";
-    // document.querySelector('#count').options[4].selected = true;
-  }
-  else {
-    document.getElementById("cityName").value = "";
+  if (document.querySelector('#country').options[4].selected === true) {
+    if (ottawa.indexOf(zip) >= 0) {
+      document.getElementById("cityName").value = "Ottawa";
+      // document.querySelector('#country').options[4].selected = true;
+    }
+    else if (kingston.indexOf(zip) >= 0) {
+      document.getElementById("cityName").value = "Kingston";
+      // document.querySelector('#country').options[4].selected = true;
+    }
+    else if (peterborough.indexOf(zip) >= 0) {
+      document.getElementById("cityName").value = "Peterborough";
+      // document.querySelector('#country').options[4].selected = true;
+    }
+    else {
+      document.getElementById("cityName").value = "";
+      document.getElementById("zipcode").placeholder = "xxx xxx";
+      document.getElementById("cityName").placeholder = "enter city name";
+      // document.querySelector('#country').options[0].selected = true;
+    }
+  }else{
     document.getElementById("zipcode").placeholder = "xxx xxx";
-    document.getElementById("cityName").placeholder = "enter city name";
-    // document.querySelector('#count').options[0].selected = true;
   }
 }
 
@@ -181,7 +185,7 @@ function checkIfEmpty() {
 
 function fixPostCode() {
   var zip = document.getElementById("zipcode").value;
-  if (zip.length >= 6 && (document.querySelector('#count').options[4].selected === true)) {
+  if (zip.length >= 6 && (document.querySelector('#country').options[4].selected === true)) {
     var head = zip.slice(0, 3);
     var tail = zip.slice((zip.length-3), zip.length);
     document.getElementById("zipcode").value = head.toUpperCase() + " " + tail.toUpperCase();
@@ -189,8 +193,12 @@ function fixPostCode() {
 }
 
 function setZip() {
-  // var country = document.getElementById("count").value;
-  if (document.querySelector('#count').options[4].selected === true) {
+  // var country = document.getElementById("country").value;
+  if (document.querySelector('#country').options[4].selected === true) {
+    document.getElementById("zipcode").value = "";
+    document.getElementById("cityName").value = "";
+    document.getElementById("zipcode").placeholder = "xxx xxx";
+    document.getElementById("cityName").placeholder = "enter city name";
     document.getElementById("zipcode").maxLength = 7
   }else{
     document.getElementById("zipcode").maxLength = 10
