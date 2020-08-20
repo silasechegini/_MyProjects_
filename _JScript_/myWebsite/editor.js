@@ -137,7 +137,7 @@ function fillCity2() {
   var kingston = ["K7K", "K7L", "K7M", "K7P"];
   var peterborough = ["K9K", "K9L", "K9H", "K9J"];
 
-  if (document.querySelector('#country').options[4].selected === true) {
+  if (document.querySelector('#country').value === 'Canada') {
     if (ottawa.indexOf(zip) >= 0) {
       document.getElementById("cityName").value = "Ottawa";
       // document.querySelector('#country').options[4].selected = true;
@@ -185,7 +185,7 @@ function checkIfEmpty() {
 
 function fixPostCode() {
   var zip = document.getElementById("zipcode").value;
-  if (zip.length >= 6 && (document.querySelector('#country').options[4].selected === true)) {
+  if (zip.length >= 6 && (document.querySelector('#country').value === 'Canada')) {
     var head = zip.slice(0, 3);
     var tail = zip.slice((zip.length-3), zip.length);
     document.getElementById("zipcode").value = head.toUpperCase() + " " + tail.toUpperCase();
@@ -194,7 +194,7 @@ function fixPostCode() {
 
 function setZip() {
   // var country = document.getElementById("country").value;
-  if (document.querySelector('#country').options[4].selected === true) {
+  if (document.querySelector('#country').value === 'Canada') {
     document.getElementById("zipcode").value = "";
     document.getElementById("cityName").value = "";
     document.getElementById("zipcode").placeholder = "xxx xxx";

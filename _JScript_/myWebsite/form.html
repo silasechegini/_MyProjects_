@@ -9,7 +9,7 @@
 
 <body>
     <div class="form">
-        <form action="./connect.php" method="POST" class="feedback">
+        <form action="http://localhost/connect.php" method="POST" class="feedback">
             <fieldset>
                 <legend class="legend-style">Contact Information</legend>
                 <div class="contact-block-1">
@@ -27,34 +27,34 @@
                     <label for="country">Select Country: </label><br>
                     <select class="text-input" name="country" id="country" onblur="setZip()">
                         <option value="0: null">Select One</option>
-                        <option value="1: Object">Australia</option>
-                        <option value="2: Object">Austria</option>
-                        <option value="3: Object">Belgium</option>
-                        <option value="4: Object">Canada</option>
-                        <option value="5: Object">Czech Republic</option>
-                        <option value="6: Object">Denmark</option>
-                        <option value="7: Object">Finland</option>
-                        <option value="8: Object">France</option>
-                        <option value="9: Object">Germany</option>
-                        <option value="10: Object">Greece</option>
-                        <option value="11: Object">Hungary</option>
-                        <option value="12: Object">Italy</option>
-                        <option value="13: Object">Luxembourg</option>
-                        <option value="14: Object">Malaysia</option>
-                        <option value="15: Object">Netherlands</option>
-                        <option value="16: Object">Nigeria</option>
-                        <option value="17: Object">Norway</option>
-                        <option value="18: Object">Poland</option>
-                        <option value="19: Object">Portugal</option>
-                        <option value="20: Object">Puerto Rico</option>
-                        <option value="21: Object">Republic Of Ireland</option>
-                        <option value="22: Object">Romania</option>
-                        <option value="23: Object">Spain</option>
-                        <option value="24: Object">Sweden</option>
-                        <option value="25: Object">Switzerland</option>
-                        <option value="26: Object">United Kingdom</option>
-                        <option value="27: Object">United States</option>
-                        <option value="28: Object">Not Listed</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Czech Republi">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Republic Of Ireland">Republic Of Ireland</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Not Listed">Not Listed</option>
                     </select>
                     <br><br>
                     <label for="zip">Zip Code:</label><br>
@@ -91,7 +91,7 @@
             </fieldset>
             <br><br>
             <!-- <button id="submit" type="button" onclick="checkIfEmpty()">Submit Form</button> -->
-            <input id="submit" type="submit" name="submit" value="Submt Form" onclick="checkIfEmpty()">
+            <input type="submit" id="submit" name="submit" value="Submit"/>
         </form>
 
         <div>
@@ -101,7 +101,7 @@
     </div>
 
     <script src="./editor.js"></script>
-    <script src="./connect.php"></script>
+    <!-- <script src="./test.php"></script> -->
 </body>
 
 </html>

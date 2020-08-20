@@ -1,40 +1,58 @@
-<?php 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "root_password";
+$dbname = "webform";
 
-    // $servername = "localhost";  
-    // $username = "ngozi";  
-    // $password = "mrPRESIDENT01";  
-    // $connect = pg_connect ($servername , $username , $password) or die("unable to connect to host");  
-    // $pg = pg_select_db ('test',$connect) or die("unable to connect to database");
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname );
 
-    // // $connect = mysql_connect("localhost", "admin_name", "password"); 
-    $connect = pg_connect("host=localhost dbname=mydb user=ngozi password=mrPRESIDENT01");
+if(!$conn) {
+    die ('Connection Failed: ' . mysqli_connect_error());
+}else{
+    echo "Connected successfully";
+}
 
-    if(!$connect) {
-        die('Connection Failed: '. pg_error());
+// mysqli_select_db("webform", $conn); 
+
+if ( isset( $_POST['submit'] ) )
+{
+    $firstname=$_POST['firstname'];
+    $lastname=$_POST['lastname'];
+    $mail=$_POST['mail'];
+    $country=$_POST['country'];
+    $zipcode=$_POST['zipcode'];
+    $cityName=$_POST['cityName'];
+    if (!isset($_POST['google'])){
+        $google=null;
+    }else{
+        $google=$_POST['google'];
     }
-
-    pg_select_db("mydb", $connect);
-
-    if($_POST['submit']){
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $mail = $_POST['mail'];
-        $country = $_POST['country'];
-        $zipcode = $_POST['zipcode'];
-        $cityName = $_POST['cityName'];
-        $google = $_POST['google'];
-        $twitter = $_POST['twitter'];    
-        $linkdin = $_POST['linkdin'];   
-        $facebook = $_POST['facebook'];   
-        $comm = $_POST['comm'];          
-    }        
-
-    $data = "INSERT INTO formData (id, firstname, lastname, email, country, zipcode, city_Name, google, twitter, linkdin, facebook, comm) VALUES ('', '$firstname', '$lastname', '$mail', '$country', '$zipcode', '$cityName', '$google', '$twitter', '$linkdin', '$facebook', '$comm')";        
-
-    if (!pg_query($pg,$con)) {
-        die('Error: '. pg_error());
+    if (!isset($_POST['twitter'])){
+        $twitter=null;
+    }else{
+        $twitter=$_POST['twitter'];
     }
-    echo "1 record added";
-    pg_query($con,$data);
+    if (!isset($_POST['linkdin'])){
+        $linkdin=null;
+    }else{
+        $linkdin=$_POST['linkdin'];
+    }
+    if (!isset($_POST['facebook'])){
+        $facebook=null;
+    }else{
+        $facebook=$_POST['facebook'];
+    } 
+    $comm=$_POST['comm']; 
 
+    $sql="INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityname, google, twitter, linkdin, facebook, comm) VALUES('$firstname', '$lastname', '$mail', '$country', '$zipcode', '$cityName', '$google', '$twitter', '$linkdin', '$facebook', '$comm')";
+    echo "your data is inserted";
+}
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+mysqli_close($conn);
 ?>
