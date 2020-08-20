@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get Feedback</title>
+    <link rel="stylesheet" href="css/formStyle.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+    <div class="form">
+        <form action="http://localhost/connect.php" method="POST" class="feedback">
+            <fieldset>
+                <legend class="legend-style">Contact Information</legend>
+                <div class="contact-block-1">
+                    <label for="firstName">First name: </label><br>
+                    <input class="text-input" type="text" name="firstname" placeholder="First" maxlength="40" id="firstname">
+                    <br><br>
+                    <label for="lastName">Last name: </label><br>
+                    <input class="text-input" type="text" name="lastname" placeholder="Last" maxlength="40" id="lastname">
+                    <br><br>
+                    <label for="email">Email Address: </label><br>
+                    <input class="text-input" type="email" name="mail" id="mail" placeholder="enter email" maxlength="40">
+                </div>
+
+                <div class="contact-block-2">
+                    <label for="country">Select Country: </label><br>
+                    <select class="text-input" name="country" id="country" onblur="setZip()">
+                        <option value="0: null">Select One</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Czech Republi">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Republic Of Ireland">Republic Of Ireland</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Not Listed">Not Listed</option>
+                    </select>
+                    <br><br>
+                    <label for="zip">Zip Code:</label><br>
+                    <label for="zipcode"><input class="text-input" type="text" id="zipcode" name="zipcode" maxlength="10" placeholder="xxx xxx" onblur="fillCity2(); fixPostCode()"></label>
+                    <br><br> 
+                    <label for="city">Select City:</label><br>
+                    <label for="city"><input class="text-input" type="text" id="cityName" name="cityName" placeholder="enter city name" maxlength="40"></label>
+                    <br><br>
+                </div>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="backCol" onmouseover="mouseOver()" onmouseout="this.style.backgroundColor = 'white'">
+                <legend class="legend-style">Survey</legend>
+                <label for="survey">How did you learn about me ?</label> <br>
+                <input type="radio" name="google" value="Google" id="google"><label for="goog">Google</label>
+                <input type="radio" name="twitter" value="Twitter" id="twitter"><label for="twit">Twitter</label>
+                <input type="radio" name="linkdin" value="linkedin" id="linkdin"><label for="link">LinkedIn</label>
+                <input type="radio" name="facebook" value="facebook" id="facebook"><label for="face">Facebook</label>
+                <br><br>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset>
+                <legend class="legend-style"> Comment </legend>
+                <br><br>
+                <label for="comment">Comments:</label> <br><br>
+                <label>
+                    <textarea name="comm" id="comm" class="comment" onfocus="onFocus()"
+                        onblur="onBlur(); checkTxt('comm');"></textarea>
+                </label>
+            </fieldset>
+            <br><br>
+            <!-- <button id="submit" type="button" onclick="checkIfEmpty()">Submit Form</button> -->
+            <input type="submit" id="submit" name="submit" value="Submit"/>
+        </form>
+
+        <div>
+            <!-- <button style="margin: 2em auto auto auto; display: block;"><a style="text-decoration: none; color: black;" href="index.html">Back</a></button> -->
+            <a class="back-button-link" href="index.html"><button class="back-button"> <span class="inner"> HOME </span></button></a> 
+        </div>
+    </div>
+
+    <script src="./editor.js"></script>
+    <!-- <script src="./test.php"></script> -->
+</body>
+
+</html>
