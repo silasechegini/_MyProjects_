@@ -4,7 +4,7 @@ var pg = require('pg');
 
 //set port
 var port = process.env.PORT || 8080
-var connection = {connectionString: process.env.DATABASE_URL || "postgres://gpiasvjrgzqzvf:1bce6ce8c5d689ca2b63d90eb22b9af71eca8fa4c78114375c67152ee7c003ee@ec2-18-235-109-97.compute-1.amazonaws.com:5432/d6vm53nifu3q3m"};
+var connection = {connectionString: process.env.DATABASE_URL || "postgres://"};
 var client = new pg.Client(connection);
 client.connect();
 
