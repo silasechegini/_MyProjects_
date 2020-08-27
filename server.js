@@ -2,13 +2,13 @@ const path = require('path');
 const layout = require('express-layout');
 const express = require('express');
 var app = express();
-var pg = require('pg');
+const pg = require('pg');
 const bodyParser = require('body-parser');
 
 //set port
 var port = process.env.PORT || 8080
 // var connection = {connectionString: process.env.DATABASE_URL || "postgres://"};
-var connection = pg.createConnection({
+var connection = new pg.Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
