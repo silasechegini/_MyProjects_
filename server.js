@@ -51,7 +51,7 @@ app.post('/submit', function (req, res) {
         facebook: req.body.facebook,
         comm: req.body.comm
     };
-    var pg = "INSERT INTO <table_name>(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
+    var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
     connection.query(pg, function (err, result) {
         if (err) throw err;
         console.log("entries inserted");
