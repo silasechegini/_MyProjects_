@@ -9,7 +9,10 @@
         "jade": "*",
         "stylus": "*",
         "sequelize": "*",
-        "pg": "*"
+        "pg": "*",
+        "express-layout": "*",
+        "body-parser": "*",
+        "mysql": "*"
     },
     "author": "Ngozi Silas",
     "license": "ISC"
