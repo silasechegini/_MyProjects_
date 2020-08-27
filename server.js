@@ -15,8 +15,6 @@ const client = new Client({
   }
 });
 
-
-
 const middlewares = [
   layout(),
   express.static(path.join(__dirname)),
@@ -58,7 +56,6 @@ app.post('/submit', function (req, res) {
         console.log("entries inserted");
     });
     res.sendFile('index.html', { root: __dirname });        
-    client.end();  
 });
 
 app.listen(port, function(){
