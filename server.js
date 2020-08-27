@@ -1,24 +1,46 @@
+const path = require('path');
+const layout = require('express-layout');
 const express = require('express');
 var app = express();
-var pg = require('pg');
+const { Client } = require('pg');
+const bodyParser = require('body-parser');
 
 //set port
 var port = process.env.PORT || 8080
-var connection = {connectionString: process.env.DATABASE_URL || "postgres://"};
-var client = new pg.Client(connection);
-client.connect();
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+
+
+const middlewares = [
+  layout(),
+  express.static(path.join(__dirname)),
+  bodyParser.urlencoded({ extended: true }),
+];
+
+app.use(middlewares);
+
+client.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 app.use(express.static(__dirname ));
 
 //routes
 app.get('/', function (req, res) {
-    res.render("form.html");
+    res.render("index");
 });
 
 
 app.post('/submit', function (req, res) {
     // Grab data from http request
-    const data = {firstname: req.body.firstname,
+    var data = {firstname: req.body.firstname,
         lastname: req.body.lastname,
         mail: req.body.mail,
         country: req.body.country,
@@ -30,16 +52,13 @@ app.post('/submit', function (req, res) {
         facebook: req.body.facebook,
         comm: req.body.comm
     };
-    connection.connect(function (err) {
+    var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
+    client.query(pg, function (err, result) {
         if (err) throw err;
-        console.log("connected");
-        var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityname, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', "+data.cityName+", '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
-        connection.query(pg, function (err, result) {
-            if (err) throw err;
-            console.log("table created");
-        });
+        console.log("entries inserted");
     });
-    res.sendFile('form.html', { root: __dirname });
+    res.sendFile('index.html', { root: __dirname });        
+    client.end();  
 });
 
 app.listen(port, function(){
