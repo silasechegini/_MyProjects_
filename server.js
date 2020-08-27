@@ -2,18 +2,19 @@ const path = require('path');
 const layout = require('express-layout');
 const express = require('express');
 var app = express();
-const { Client } = require('pg');
+var postgre = require('pg');
 const bodyParser = require('body-parser');
 
 //set port
 var port = process.env.PORT || 8080
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
+// var connection = {connectionString: process.env.DATABASE_URL || "postgres://"};
+var connection = postgre.createConnection({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
 });
+
 
 const middlewares = [
   layout(),
@@ -23,7 +24,7 @@ const middlewares = [
 
 app.use(middlewares);
 
-client.connect(function(err) {
+connection.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
 });
@@ -50,12 +51,13 @@ app.post('/submit', function (req, res) {
         facebook: req.body.facebook,
         comm: req.body.comm
     };
-    var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
-    client.query(pg, function (err, result) {
+    var pg = "INSERT INTO <table_name>(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
+    connection.query(pg, function (err, result) {
         if (err) throw err;
         console.log("entries inserted");
     });
     res.sendFile('index.html', { root: __dirname });        
+    connection.end();  
 });
 
 app.listen(port, function(){
