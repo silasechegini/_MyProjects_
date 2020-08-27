@@ -57,7 +57,6 @@ app.post('/submit', function (req, res) {
         console.log("entries inserted");
     });
     res.sendFile('index.html', { root: __dirname });        
-    connection.end();  
 });
 
 app.listen(port, function(){
