@@ -56,7 +56,7 @@ app.post('/submit', function (req, res) {
         if (err) throw err;
         console.log("entries inserted");
     });
-    res.render("index", {root: __dirname});        
+    res.sendFile("form.html", { root: __dirname });       
 });
 
 app.listen(port, function(){
