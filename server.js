@@ -45,18 +45,24 @@ app.post('/submit', function (req, res) {
         country: req.body.country,
         zipcode: req.body.zipcode,
         cityName: req.body.cityName,
-        google: function () {
-            if (req.body.google) {
-                return req.body.google;
-            } else {
-                return "Null";
-            }
-        },
+        google: req.body.google,
         twitter: req.body.twitter,
         linkdin: req.body.linkdin,
         facebook: req.body.facebook,
         comm: req.body.comm
     };
+    if (typeof data.google === 'undefined' || data.google === null) {
+        data.google = 'NULL';
+    }
+    if (typeof data.twitter === 'undefined' || data.twitter === null) {
+        data.twitter = 'NULL';
+    }
+    if (typeof data.linkdin === 'undefined' || data.linkdin === null) {
+        data.linkdin = 'NULL';
+    }
+    if (typeof data.facebook === 'undefined' || data.facebook === null) {
+        data.facebook = 'NULL';
+    }
     var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
     connection.query(pg, function (err, result) {
         if (err) throw err;
