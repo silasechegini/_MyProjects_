@@ -45,7 +45,13 @@ app.post('/submit', function (req, res) {
         country: req.body.country,
         zipcode: req.body.zipcode,
         cityName: req.body.cityName,
-        google: req.body.google,
+        google: function () {
+            if (req.body.google) {
+                return req.body.google;
+            } else {
+                return "Null";
+            }
+        },
         twitter: req.body.twitter,
         linkdin: req.body.linkdin,
         facebook: req.body.facebook,
