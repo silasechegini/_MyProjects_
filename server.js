@@ -63,10 +63,17 @@ app.post('/submit', function (req, res) {
     if (typeof data.facebook === 'undefined' || data.facebook === null) {
         data.facebook = 'NULL';
     }
-    var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
-    connection.query(pg, function (err, result) {
-        if (err) throw err;
+    // var pg = "INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ('"+data.firstname+"', '"+data.lastname+"', '"+data.mail+"', '"+data.country+"', '"+data.zipcode+"', '"+data.cityName+"', '"+data.google+"', '"+data.twitter+"', '"+data.linkdin+"','"+data.facebook+"', '"+data.comm+"')";
+    // connection.query(pg, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("entries inserted");
+    // });
+    var pg = connection.query("INSERT INTO userdata(firstname, lastname, mail, country, zipcode, cityName, google, twitter, linkdin, facebook, comm) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", [data.firstname, data.lastname, data.mail, data.country, data.zipcode, data.cityName, data.google, data.twitter, data.linkdin, data.facebook, data.comm])
+    .then(() => {
         console.log("entries inserted");
+    })
+    .catch(error => {
+        throw error;
     });
     res.sendFile("form.html", { root: __dirname });       
 });
