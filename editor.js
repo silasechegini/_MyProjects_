@@ -96,6 +96,7 @@ function onBlur() {
   document.getElementById("comm").style.backgroundColor = "White";
 }
 
+//checks text field for empty string
 function checkTxt(comm) {
   if (document.getElementById(comm).value === "") {
     alert("text required.");
