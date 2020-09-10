@@ -1,0 +1,7 @@
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\bin\Debug\CSProject.exe.config
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\bin\Debug\CSProject.exe
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\bin\Debug\CSProject.pdb
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\obj\Debug\CSProject.csprojAssemblyReference.cache
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\obj\Debug\CSProject.csproj.CoreCompileInputs.cache
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\obj\Debug\CSProject.exe
+C:\Users\silas\Documents\Study\C#_Projects\CSProject\obj\Debug\CSProject.pdb
