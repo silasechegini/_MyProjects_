@@ -22,14 +22,19 @@ body {
 
 /* Clock styles */
 .circle {
-    fill: none;
+    fill: black;
     stroke: black;
     stroke-width: 9;
     stroke-miterlimit: 10;
 }
 
+.inner-circle {
+    fill: none;
+    stroke: grey;
+}
+
 .mid-circle {
-    fill: black;
+    fill: darkgrey;
 }
 .hour-marks {
     fill: none;
@@ -54,7 +59,7 @@ body {
 
 .second-arm {
     fill: none;
-    stroke: black;
+    stroke: grey;
     stroke-width: 4;
     stroke-miterlimit: 10;
 }
@@ -68,5 +73,5 @@ body {
 /* Optional: Use transition for animation. */
 #hour, #minute, #second {
     transform-origin: 300px 300px;
-    transition: transform .5s ease-in-out;
+    transition: transform 0s ease-in-out;
 }
