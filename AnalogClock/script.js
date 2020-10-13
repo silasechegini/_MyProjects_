@@ -28,6 +28,5 @@ function runTheClock() {
     currentDate.innerHTML = day + '/' + month + '/' + year;
 
 }
-// console.log('day:' + day + ' month:' + month + ' year:' + year);
 
 var interval = setInterval(runTheClock, 1000);
