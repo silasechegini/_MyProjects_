@@ -9,6 +9,8 @@ const TIMER = document.querySelector(".timer");
 var timer = [0,0,0,0];
 var interval = 0;
 var timerIsRunning = false;
+var string;
+var newTimer;
 
 
 function leadingZero(time) {
@@ -20,7 +22,7 @@ function leadingZero(time) {
 
 
 function runTimer(){
-    let newTimer = timer[0] + ":" + timer[1] + ":" + timer[2] ;
+    newTimer = timer[0] + ":" + timer[1] + ":" + timer[2] ;
     TIMER.innerHTML = newTimer;
     timer[3]++;
 
@@ -38,7 +40,7 @@ function charCount(){
 }
 
 function display(){
-    let string = TEXTAREA.value;
+    string = TEXTAREA.value;
     let testText = WRITEUP.substring(0, string.length);
 
     if(string == WRITEUP){
@@ -63,6 +65,8 @@ function reset() {
     TIMER.innerHTML = "00:00:00";
     TEXTAREA.style.borderColor = "grey";
 }
+
+
 
 //event listeners
 TEXTAREA.addEventListener("keypress", charCount, false);

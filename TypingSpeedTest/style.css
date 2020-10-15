@@ -1,3 +1,51 @@
+.intro-div, .sample {
+    text-align: justify;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    padding: .5em 1em .5em 1em;
+    margin: 0 auto 2em auto;
+    display: block;
+}
+
+.intro-div {
+    background-color: black;
+    color: burlywood;
+    margin-top: 2em;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-direction: alternate; 
+    animation-iteration-count: infinite;
+}
+
+.zoom {
+    transition: transform 1s;
+}
+.zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+
+@keyframes example {
+    /* from {background-color: black;}
+    to {background-color: rgb(3, 34, 68);} */
+    
+  0%   {background-color: black; }
+  25%  {background-color: rgb(3, 68, 13);}
+  50%  {background-color:rgb(5, 5, 88); }
+  75%  {background-color:rgb(52, 4, 51); }
+  100% {background-color:rgb(62, 41, 14);}
+}
+
+.sample {
+    background-color: grey;
+}
+
+.intro-div h1, p {
+    padding: 1em;
+}
+
 .page {
     display: block;
     margin: auto;
@@ -7,32 +55,44 @@
 .textarea {
     width: 100%;
     resize: none;
-    border-style: solid;
+    border: 2px solid grey;
     border-width: 1em;
 }
-.sample {
-    background-color: grey;
-    width: 100%;
-    margin: 1em auto 2em auto;
-    display: block;
-    text-align: justify;
-    padding: .5em;
-    font-size: 2em;
-}
+
 .button {
     float: right;
-    width: 20%;
-    height: 100px;
+    width: 15%;
+    height: 80px;
     font-size: 3em;
     font-weight: bold;
+    cursor: pointer;
     border-radius: .2em;
+    border: none;
+    outline: none;
+    margin: .5em 0 0 0;
+    background-color: darkgray;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(8px);
+}
+
 .timer {
     float: left;
-    width: 20%;
-    height: 100px;
+    height: 80px;
     font-size: 5em;
     font-weight: bold;
     border-radius: .2em;
     padding: .2em;
+    margin: .2em 0 2em 0;
+    background-color: slategray;
 }
