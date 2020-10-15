@@ -11,6 +11,7 @@ body {
     align-items: middle;
 }
 .date h1 {
+    background-color: white;
     text-align: center;
     margin-bottom: 0;
     color: black;
@@ -23,14 +24,15 @@ body {
 /* Clock styles */
 .circle {
     fill: black;
-    stroke: black;
-    stroke-width: 9;
-    stroke-miterlimit: 10;
+    /* stroke: black; */
+    /* stroke-width: 9;
+    stroke-miterlimit: 10; */
 }
 
 .inner-circle {
     fill: none;
     stroke: grey;
+    stroke-width: 2;
 }
 
 .mid-circle {
@@ -39,15 +41,15 @@ body {
 .hour-marks {
     fill: none;
     stroke: darkgrey;
-    stroke-width: 9;
-    stroke-miterlimit: 10;
+    stroke-width: 5;
+    /* stroke-miterlimit: 5; */
 }
 
 .hour-arm {
     fill: none;
     stroke: grey;
     stroke-width: 17;
-    stroke-miterlimit: 10;
+    stroke-miterlimit: 10; 
 }
 
 .minute-arm {
