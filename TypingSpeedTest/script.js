@@ -3,14 +3,17 @@ const WRITEUP = document.querySelector(".sample p").innerHTML;
 const TEXTAREA = document.querySelector(".textarea");
 const BUTTON = document.querySelector(".button");
 const TIMER = document.querySelector(".timer");
+var WPS = document.querySelector("#wps");
+var ACC = document.querySelector("#acc");
 
 //functions
 
 var timer = [0,0,0,0];
 var interval = 0;
 var timerIsRunning = false;
-var string;
-var newTimer;
+var string = "";
+var newTimer = [0,0,0,0];
+var accuracyCounter = 0;
 
 
 function leadingZero(time) {
@@ -46,11 +49,13 @@ function display(){
     if(string == WRITEUP){
         clearInterval(interval);
         TEXTAREA.style.borderColor = "green";
+        ACC.innerHTML = "Accuracy: " + accuracy() + " %";
     }else{
         if(string == testText){
             TEXTAREA.style.borderColor = "blue";
         }else{
             TEXTAREA.style.borderColor = "orange";
+            accuracyCounter++;
         }
     }
 }
@@ -63,12 +68,29 @@ function reset() {
     
     TEXTAREA.value = "";
     TIMER.innerHTML = "00:00:00";
+    WPS.innerHTML = "0 words per minute"
+    ACC.innerHTML = "Accuracy: 100";
     TEXTAREA.style.borderColor = "grey";
 }
 
+function wordsPerSec(){
+    let numWords = string.split(" ");
+    var minutes = parseInt(newTimer[0] + newTimer[1]);
+    if(minutes == 0){
+        WPS.innerHTML =  numWords.length + " words per minute. "
+    }else{
+        let wps = Math.floor(numWords.length / minutes);
+        WPS.innerHTML = wps + " words per minute. "
+    }
+}
 
+function accuracy(){
+    let accuracy_ = (((WRITEUP.length - accuracyCounter)/WRITEUP.length) * 100).toFixed(2);
+    return accuracy_;
+}
 
 //event listeners
 TEXTAREA.addEventListener("keypress", charCount, false);
+TEXTAREA.addEventListener("keypress", wordsPerSec, false);
 TEXTAREA.addEventListener("keyup", display, false);
 BUTTON.addEventListener("click", reset, false);

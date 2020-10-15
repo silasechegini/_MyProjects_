@@ -96,3 +96,13 @@
     margin: .2em 0 2em 0;
     background-color: slategray;
 }
+
+.block {
+    display: block;
+    /* height: 80px; */
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: .2em;
+    padding: .2em;
+    margin: 1em 0 0 10em;
+}
