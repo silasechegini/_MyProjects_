@@ -6,6 +6,8 @@ const TIMER = document.querySelector(".timer");
 var WPS = document.querySelector("#wps");
 var ACC = document.querySelector("#acc");
 
+
+
 //functions
 
 var timer = [0,0,0,0];
@@ -45,11 +47,11 @@ function charCount(){
 function display(){
     string = TEXTAREA.value;
     let testText = WRITEUP.substring(0, string.length);
+    ACC.innerHTML = "Accuracy: " + accuracy() + " %";
 
     if(string == WRITEUP){
         clearInterval(interval);
         TEXTAREA.style.borderColor = "green";
-        ACC.innerHTML = "Accuracy: " + accuracy() + " %";
     }else{
         if(string == testText){
             TEXTAREA.style.borderColor = "blue";
@@ -65,15 +67,16 @@ function reset() {
     interval = null;
     timer = [0,0,0,0];
     timerIsRunning = false;
+    accuracyCounter = 0;
     
     TEXTAREA.value = "";
     TIMER.innerHTML = "00:00:00";
     WPS.innerHTML = "0 words per minute"
-    ACC.innerHTML = "Accuracy: 100";
+    ACC.innerHTML = "Accuracy: 100 %";
     TEXTAREA.style.borderColor = "grey";
 }
 
-function wordsPerSec(){
+function wordsPerMin(){
     let numWords = string.split(" ");
     var minutes = parseInt(newTimer[0] + newTimer[1]);
     if(minutes == 0){
@@ -91,6 +94,6 @@ function accuracy(){
 
 //event listeners
 TEXTAREA.addEventListener("keypress", charCount, false);
-TEXTAREA.addEventListener("keypress", wordsPerSec, false);
+TEXTAREA.addEventListener("keypress", wordsPerMin, false);
 TEXTAREA.addEventListener("keyup", display, false);
 BUTTON.addEventListener("click", reset, false);

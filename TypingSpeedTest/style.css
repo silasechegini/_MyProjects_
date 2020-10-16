@@ -61,27 +61,26 @@
 
 .button {
     float: right;
-    width: 15%;
-    height: 80px;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     cursor: pointer;
     border-radius: .2em;
     border: none;
     outline: none;
     margin: .5em 0 0 0;
-    background-color: darkgray;
+    padding: .5em 1em .5em 1em ;
+    background-color: slategray;
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .button:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: grey;
     color: white;
 }
 
 .button:active {
-    background-color: #3e8e41;
+    background-color: grey;
     box-shadow: 0 5px #666;
     transform: translateY(8px);
 }
@@ -98,11 +97,19 @@
 }
 
 .block {
-    display: block;
-    /* height: 80px; */
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: .2em;
-    padding: .2em;
-    margin: 1em 0 0 10em;
+    background-color: black;
+    margin: 1em auto auto auto;
+    width: 30%;
+    padding: .5em;
 }
+
+.block > p{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: .5em;
+    text-align: center;
+    background-color: white;
+    margin: .5em auto .5em auto;
+    width: 80%;
+}
+
