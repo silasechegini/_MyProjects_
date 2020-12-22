@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(207, 207, 220);
+    text-align: center;
+    font-family: Georgia, "Times new roman";
+  }
+  #image {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+  }
+
+  #img-caption {
+    margin: 40px 20px 20px 20px;
+    color: rgb(25, 187, 85);
+  }
+  
+  #img-div {
+    background-color: white;
+    width: 98%;
+    margin: auto;
+    padding: 10px 0 20px 0;
+  }
+  
+  #tribute-info {
+    margin: auto;
+    padding: 50px 0 40px 0;
+    width: 40%;
+    text-align: justify;
+    font-family: georgia;
+    line-height: 2em;
+  }
+  
+  h2 {
+    text-align: center;
+  }

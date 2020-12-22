@@ -14,8 +14,8 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -96,6 +96,7 @@ function onBlur() {
   document.getElementById("comm").style.backgroundColor = "White";
 }
 
+//checks text field for empty string
 function checkTxt(comm) {
   if (document.getElementById(comm).value === "") {
     alert("text required.");
@@ -167,8 +168,8 @@ function checkIfEmpty() {
   var phoneNum = document.getElementById("phonenum").value;
 
   var x = document.getElementsByTagName("p");
-  alert("number of paragraphs is: " + x.length)
-  nodetoadd
+  alert("number of paragraphs is: " + x.length);
+  // nodetoadd
 
   // var values = [firstName, lastName, phoneNum];
 
@@ -199,9 +200,9 @@ function setZip() {
     document.getElementById("cityName").value = "";
     document.getElementById("zipcode").placeholder = "xxx xxx";
     document.getElementById("cityName").placeholder = "enter city name";
-    document.getElementById("zipcode").maxLength = 7
+    document.getElementById("zipcode").maxLength = 7;
   }else{
-    document.getElementById("zipcode").maxLength = 10
+    document.getElementById("zipcode").maxLength = 10;
     document.getElementById("cityName").value = "";
     document.getElementById("zipcode").value = "";
     document.getElementById("zipcode").placeholder = "xxx xxx";

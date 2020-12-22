@@ -1,0 +1,17 @@
+{
+  "name": "typingspeedtest",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  },
+  "dependencies": {
+    "uglify-js": "^3.12.1"
+  }
+}

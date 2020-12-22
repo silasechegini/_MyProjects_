@@ -1,6 +1,27 @@
+#heading { top: 0;}
+.fixed-footer {bottom: 0;}
+
+#heading, .fixed-footer {
+    padding: 1.5em 0 .5em 0;
+    text-align: center;
+    left: 0;
+    width: 100%; 
+    position: fixed;
+    z-index:1;
+    background-color: grey;
+}
+.home-nav > a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    padding: 7px 25px;
+    display: inline-block;
+}
+
 .form {
     width: 50%; 
-    margin: 2em auto auto auto; 
+    margin: 4em auto 3em auto; 
     border: none; 
     padding: 2em; 
     background-color: grey;
@@ -49,10 +70,6 @@
     font-size: 16px;
     resize: none;
                         /* onfocus="this.style.backgroundColor = 'yellow';" */
-}
-
-.back-button-link {
-    text-decoration: none;
 }
 
 .back-button {

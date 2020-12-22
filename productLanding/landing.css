@@ -1,0 +1,432 @@
+header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+}
+
+.logo {
+    width: 60vw;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+nav {
+  font-weight: 400;
+  display: block;
+}
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#foot-nav {
+    font-weight: 400;
+    display: block;
+}
+
+#foot-nav > ul {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#foot-1 {
+    width: 300px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#main {
+  padding-top: 150px;
+  text-align: center;
+}
+#email {
+  width: 300px;
+  height: 30px;
+  display: block;
+  margin: auto;
+}
+#submit {
+  width: 150px;
+  margin: 20px;
+  height: 30px;
+  background-color: orange;
+  border: none;
+  font-size: 15px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+#features {
+  width: 1000px;
+  margin: 50px auto auto auto;
+  text-align: justify;
+}
+
+#feature-1, #feature-2, #feature-3{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 30%;
+  background-color: orange;
+  display: block;
+  margin: 20px 0 0 0;
+  left: 0;
+}
+
+.icon-layout{
+  width: 80px;
+  height: 80px;
+}
+
+.description {
+  width: 70%;
+  float: right;
+}
+
+#video {
+  margin: 80px auto auto auto;
+  width: 600px;
+  height: 345px;
+}
+
+#pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-column-gap: 20px;
+  width: 1000px;
+  justify-content: space-evenly;
+  margin: 80px auto 180px auto;
+}
+
+.grid-title {
+  background-color: #eee;
+  padding: 20px 0 20px 0;
+}
+
+.each-grid {
+  border: solid 1px black;
+}
+
+.grid-buttons {
+  padding: 10px 20px;
+  margin: 20px; 
+  border: none;
+  background-color: orange;
+}
+
+footer {
+  /* position: fixed; */
+  /* bottom: 0; */
+  max-height: 50px;
+  min-height: 50px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+}
+
+@media (max-width: 1200px) {
+    #pricing {
+        grid-template-columns: repeat(2, 350px);
+        grid-gap: 20px;
+        width: 500px;
+    }
+    #features {
+        width: 700px;
+    }
+
+    #header {
+        width: 100%;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    nav {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 760px) {
+    #pricing {
+        grid-template-columns: repeat(1, 350px);
+        grid-gap: 20px;
+        width: 250px;
+    }
+
+    #video {
+        width: 450px;
+        height: 250px;
+    }
+
+    #features {
+          width: 450px;
+    }
+
+    #header {
+        width: 100%;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    nav {
+        width: 60%;
+    }
+
+    nav > ul {
+        width: 100%;
+        display: block;
+        padding: 0 0 0 150px;
+    }
+
+    footer {
+        display: block;
+        justify-content: center;
+    }
+
+    #foot-2 > p {
+        text-align: center;
+    }
+}
+
+
+/*
+header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+}
+
+.logo {
+    width: 60vw;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    display: flex;
+margin-left: 20px;
+}
+nav {
+  font-weight: 400;
+  display: block;
+}
+#nav-bar > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  min-height: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #eee;
+}
+
+#foot-nav {
+  padding: 0 0 0 600px;
+  justify-content: end;
+}
+
+#foot-nav > ul, p {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#main {
+  padding-top: 70px;
+  text-align: center;
+}
+#email {
+  width: 25%;
+  height: 30px;
+  display: block;
+  margin: auto;
+}
+#submit {
+  width: 10%;
+  margin: 20px;
+  height: 30px;
+  background-color: orange;
+  border: none;
+  font-size: 15px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+#features {
+  width: 100%;
+  display: block;
+  margin: auto;
+  text-align: justify;
+}
+
+#feature-1, #feature-2, #feature-3{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: orange;
+  margin: 20px 0 0 0;
+}
+
+.flame{
+  bottom: -44px;
+  position: absolute;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  transform:rotate(-45deg) scale(1.5,1.5);
+}
+
+.yellow{
+  left: 340px;
+  width: 30px;
+  height: 30px;
+  background: gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+
+.orange{
+  left: 335px; 
+  width: 40px;
+  height: 40px;
+  background:orange;
+  box-shadow: 0px 0px 9px 4px orange;
+}
+
+.red{
+  left: 330px;
+  width: 50px;
+  height: 50px;
+  background:OrangeRed;
+  box-shadow: 0px 0px 5px 4px OrangeRed;
+}
+
+.white{
+  left: 340px; 
+  width: 30px;
+  height: 30px;
+  background:white;
+  box-shadow: 0px 0px 9px 4px white;
+}
+
+.circle{
+  width: 20px;
+  height: 20px;
+  bottom: -270px;
+  border-radius: 50%;
+  position: ;
+  background-color: black;
+}
+
+ @keyframes flicker{
+  0%   {transform: rotate(-1deg);}
+  20%  {transform: rotate(1deg);}
+  40%  {transform: rotate(-1deg);}
+  60%  {transform: rotate(1deg) scaleY(1.04);}
+  80%  {transform: rotate(-2deg) scaleY(0.92);}
+  100% {transform: rotate(1deg);}
+} 
+
+circle-1 {
+  left: 20px;
+}
+
+.description {
+  width: 70%;
+  float: right;
+}
+
+#video {
+  margin: 80px auto auto auto;
+}
+
+#pricing {
+  display: grid;
+  width: 100%;
+  margin: 80px auto 80px auto;
+  grid-template-columns: repeat(3, 30%);
+  grid-column-gap: 20px;
+}
+
+.grid-title {
+  background-color: #eee;
+  padding: 20px 0 20px 0;
+}
+
+.each-grid {
+  border: solid 1px black;
+  text-align: center;
+}
+
+.grid-buttons {
+  padding: 10px 20px;
+  margin: 20px; 
+  border: none;
+  background-color: orange;
+}
+
+@media screen and (min-width: 900px) {
+  article {
+    padding: 1rem 3rem;
+  }
+}
+
+*/

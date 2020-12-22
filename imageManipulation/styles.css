@@ -1,0 +1,36 @@
+.hide {
+    visibility: hidden;
+}
+
+.no-wrap {
+    clear: both;
+}
+
+.position {
+    position: absolute;
+}
+
+.about {
+    background-color: skyblue;
+    padding: 15px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.img-gal {
+    background-color: rgb(245, 239, 164);
+    padding: 15px;
+    left: 0;
+    width: 100%;
+}
+
+.grid {
+    padding: 5px; 
+}
+
+.display.hover {
+
+}

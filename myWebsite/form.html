@@ -8,24 +8,32 @@
 </head>
 
 <body>
+    <div id="heading">
+        <nav class="home-nav">
+            <a href="./index.html">HOME</a>
+            <a href="./about.html">ABOUT</a>
+            <a href="./form.html">CONTACT</a>
+        </nav>
+    </div>
+
     <div class="form">
-        <form action="http://localhost/connect.php" method="POST" class="feedback">
+        <form action="/submit" method="POST" class="feedback">
             <fieldset>
                 <legend class="legend-style">Contact Information</legend>
                 <div class="contact-block-1">
                     <label for="firstName">First name: </label><br>
-                    <input class="text-input" type="text" name="firstname" placeholder="First" maxlength="40" id="firstname">
+                    <input class="text-input" type="text" name="firstname" placeholder="First" maxlength="40" id="firstname" required>
                     <br><br>
                     <label for="lastName">Last name: </label><br>
-                    <input class="text-input" type="text" name="lastname" placeholder="Last" maxlength="40" id="lastname">
+                    <input class="text-input" type="text" name="lastname" placeholder="Last" maxlength="40" id="lastname" required> 
                     <br><br>
                     <label for="email">Email Address: </label><br>
-                    <input class="text-input" type="email" name="mail" id="mail" placeholder="enter email" maxlength="40">
+                    <input class="text-input" type="email" name="mail" id="mail" placeholder="enter email" maxlength="40" required>
                 </div>
 
                 <div class="contact-block-2">
                     <label for="country">Select Country: </label><br>
-                    <select class="text-input" name="country" id="country" onblur="setZip()">
+                    <select class="text-input" name="country" id="country" onblur="setZip()" required>
                         <option value="0: null">Select One</option>
                         <option value="Australia">Australia</option>
                         <option value="Austria">Austria</option>
@@ -58,10 +66,10 @@
                     </select>
                     <br><br>
                     <label for="zip">Zip Code:</label><br>
-                    <label for="zipcode"><input class="text-input" type="text" id="zipcode" name="zipcode" maxlength="10" placeholder="xxx xxx" onblur="fillCity2(); fixPostCode()"></label>
+                    <label for="zipcode"><input class="text-input" type="text" id="zipcode" name="zipcode" maxlength="10" placeholder="xxx xxx" required onblur="fillCity2(); fixPostCode()"></label>
                     <br><br> 
                     <label for="city">Select City:</label><br>
-                    <label for="city"><input class="text-input" type="text" id="cityName" name="cityName" placeholder="enter city name" maxlength="40"></label>
+                    <label for="city"><input class="text-input" type="text" id="cityName" name="cityName" placeholder="enter city name" maxlength="40" required></label>
                     <br><br>
                 </div>
             </fieldset>
@@ -86,18 +94,17 @@
                 <label for="comment">Comments:</label> <br><br>
                 <label>
                     <textarea name="comm" id="comm" class="comment" onfocus="onFocus()"
-                        onblur="onBlur(); checkTxt('comm');"></textarea>
+                        onblur="onBlur()" required></textarea>
                 </label>
             </fieldset>
             <br><br>
             <!-- <button id="submit" type="button" onclick="checkIfEmpty()">Submit Form</button> -->
             <input type="submit" id="submit" name="submit" value="Submit"/>
         </form>
-
-        <div>
-            <!-- <button style="margin: 2em auto auto auto; display: block;"><a style="text-decoration: none; color: black;" href="index.html">Back</a></button> -->
-            <a class="back-button-link" href="index.html"><button class="back-button"> <span class="inner"> HOME </span></button></a> 
-        </div>
+    </div>    
+    
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2020 Silas-Harrison Inc. </div>
     </div>
 
     <script src="./editor.js"></script>
