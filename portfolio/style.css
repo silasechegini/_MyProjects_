@@ -1,0 +1,232 @@
+body {
+    background-color: rgba(250, 66, 100);;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 75px;
+    padding: 2px 20px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(250, 66, 100);
+    font-family: cursive;
+    z-index: 1;
+  }
+  
+  #navbar {
+    font-weight: 800;
+    float: right;
+  }
+  
+  #navbar > ul {
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  .nav-link {
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  #welcome-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 70px;
+    background-color: rgb(44, 43, 43);
+    text-align: center;
+    line-height: 20px;
+    height: 100vh;
+    padding-top: 0px;
+    display: block;
+  }
+  
+  #welcome-section > h1 {
+    font-size: 80px;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  #welcome-section > p {
+    font-size: 35px;
+    font-style: italic;
+    color: red;
+    font-family: sans-serif;
+  }
+  
+  #projects-div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 390px;
+    padding: 100px 50px;
+    background-color:  rgb(10, 54, 81);
+    text-align: center;
+  }
+  
+  #projects > h1 {
+    font-size: 50px;
+    text-decoration: underline;
+    color: white;
+  }
+  
+  #project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-column-gap: 100px;
+    justify-content: center;
+  }
+  
+  .each-grid {
+    background-color: black;
+    max-height: 400px;
+  }
+  
+  .each-grid > a, img {
+    max-width: 100%;
+    width: 100%;
+    min-height: 300px;
+  }
+  
+  .project-tile {
+    color: white;
+    font-size: 1.5em;
+    font-family: cursive;
+  }
+
+  #contact {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgb(37, 39, 41);
+    color: white;
+    margin-top: 1124px;
+    padding: 200px 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1em;
+    font-size: 2em;
+  }
+  
+  #contact > h1 {
+    font-size: 70px;
+    color: white;
+  }
+  
+  #contact-nav {
+    font-weight: 800;
+  }
+  
+  #contact-nav > ul {
+    width: 40vw;
+    display: flex;
+    margin: auto;
+    margin-top: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  #contact-link > li, a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  #footer {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    background-color: rgb(37, 39, 41);
+    color: white;
+    margin-top: 1820px;
+    padding: 0 50px 50px 50px;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: 1470px) and (min-height: 864px){
+    #project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 400px);
+        grid-row-gap: 20px;
+      }
+
+      #contact {
+          margin-top: 1529px;
+          font-size: 1.5em;
+      }
+
+      #footer {
+        margin-top: 2200px;
+      }
+  }
+
+  @media screen and (max-width: 900px) and (min-height: 864px) {
+    #navbar > ul {
+        width: 15vw;
+        display: block;
+        justify-content: space-around;
+        list-style: none;
+    }
+      
+    .nav-link {
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #welcome-section {
+        margin-top: 112px;
+    }
+
+    #welcome-section > h1 {
+        font-size: 50px;
+    }
+      
+    #welcome-section > p {
+        font-size: 25px;
+    }
+  
+    #project-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 400px);
+      grid-row-gap: 20px;
+    }
+
+    #contact {
+        margin-top: 1934px;
+        font-size: 1.5em;
+    }
+      
+    #contact > h1 {
+        font-size: 42px;
+        color: white;
+    }
+      
+    #contact-nav {
+        font-weight: 400;
+    }
+  
+    #contact-nav > ul {
+      width: 60vw;
+      display: flex;
+      margin-top: 100px;
+      flex-direction: row;
+      justify-content: space-around;
+      list-style: none;
+    }
+
+    #footer {
+      margin-top: 2565px;
+    }
+    
+  }
