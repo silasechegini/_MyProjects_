@@ -61,6 +61,7 @@ body {
   }
   
   #projects-div {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
     left: 0;
     right: 0;
@@ -113,6 +114,7 @@ body {
     text-align: center;
     line-height: 1em;
     font-size: 2em;
+    font-family: "Comic Sans MS";
   }
   
   #contact > h1 {
@@ -153,13 +155,13 @@ body {
     font-size: 2em;
   }
 
-  a {
+  a.profile-link {
     text-shadow: 0 2px 0 #721e1e, 0px 2px 5px rgba(0,0,0,0.5);
     position: relative;
     -webkit-transition: all 1s ease-in;
   }
 
-  a:hover {
+  a.profile-link:hover {
     text-shadow: 0 2px 0 #d84f4f, 0 4px 0 #d54646, 0 6px 0 #ce3333, 0 8px 0 #b92e2e, 0 10px 0 #912525, 0 12px 0 #721e1e, 0px 12px 10px rgba(0,0,0,0.5);
     top: -12px;
   }
