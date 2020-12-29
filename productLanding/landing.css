@@ -13,7 +13,7 @@ header {
     width: 60vw;
 }
 
-.logo > img {
+a > img {
     width: 100%;
     height: 100%;
     max-width: 300px;
@@ -151,6 +151,11 @@ footer {
   align-items: center;
   background-color: #eee;
 }
+
+.jump-to:target {
+  padding-top: 100px;
+}
+
 
 @media (max-width: 1200px) {
     #pricing {
