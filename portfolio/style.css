@@ -42,15 +42,16 @@ body {
     background-color: rgb(44, 43, 43);
     text-align: center;
     line-height: 20px;
-    height: 100vh;
-    padding-top: 0px;
+    height: 70vh;
+    padding: 0;
     display: block;
   }
   
   #welcome-section > h1 {
-    font-size: 80px;
+    font-size: 60px;
     color: white;
-    font-family: sans-serif;
+    font-family: cursive;
+    padding-top: 300px;;
   }
   
   #welcome-section > p {
@@ -61,11 +62,11 @@ body {
   }
   
   #projects-div {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: 390px;
+    margin-top: 77vh;
     padding: 100px 50px;
     background-color:  rgb(10, 54, 81);
     text-align: center;
@@ -107,7 +108,7 @@ body {
     right: 0;
     background-color: rgb(37, 39, 41);
     color: white;
-    margin-top: 1124px;
+    margin-top: 150vh;
     padding: 200px 50px;
     align-items: center;
     justify-content: center;
@@ -148,7 +149,7 @@ body {
     right: 0;
     background-color: rgb(37, 39, 41);
     color: white;
-    margin-top: 1820px;
+    margin-top: 219vh;
     padding: 0 50px 50px 50px;
     justify-content: center;
     text-align: center;
@@ -166,7 +167,12 @@ body {
     top: -12px;
   }
 
-  @media screen and (max-width: 1470px) and (min-height: 864px){
+  @media screen and (max-width: 1470px) and (min-height: 500px){
+  
+    #projects-div {
+      margin-top: 745px;
+    }
+
     #project-grid {
         display: grid;
         grid-template-columns: repeat(2, 400px);
@@ -174,16 +180,16 @@ body {
       }
 
       #contact {
-          margin-top: 1529px;
+          margin-top: 1884px;
           font-size: 1.5em;
       }
 
       #footer {
-        margin-top: 2200px;
+        margin-top: 2555px;
       }
   }
 
-  @media screen and (max-width: 900px) and (min-height: 864px) {
+  @media screen and (max-width: 980px) and (min-height: 500px) {
     #navbar > ul {
         width: 15vw;
         display: block;
@@ -214,14 +220,18 @@ body {
       grid-template-columns: repeat(1, 400px);
       grid-row-gap: 20px;
     }
+  
+    #projects > h1 {
+      font-size: 30px;
+    }
 
     #contact {
-        margin-top: 1934px;
+        margin-top: 230vh;
         font-size: 1.5em;
     }
       
     #contact > h1 {
-        font-size: 42px;
+        font-size: 35px;
         color: white;
     }
       
@@ -230,7 +240,7 @@ body {
     }
   
     #contact-nav > ul {
-      width: 60vw;
+      width: 70vw;
       display: flex;
       margin-top: 100px;
       flex-direction: row;
@@ -239,7 +249,7 @@ body {
     }
 
     #footer {
-      margin-top: 2565px;
+      margin-top: 295vh;
     }
     
   }
