@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(250, 66, 100);;
+    background-color: rgba(250, 66, 100);
   }
   header {
     position: fixed;
@@ -42,7 +42,7 @@ body {
     background-color: rgb(44, 43, 43);
     text-align: center;
     line-height: 20px;
-    height: 70vh;
+    height: 700px;
     padding: 0;
     display: block;
   }
@@ -66,7 +66,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: 77vh;
+    margin-top: 625px;
     padding: 100px 50px;
     background-color:  rgb(10, 54, 81);
     text-align: center;
@@ -108,7 +108,7 @@ body {
     right: 0;
     background-color: rgb(37, 39, 41);
     color: white;
-    margin-top: 150vh;
+    margin-top: 1355px;
     padding: 200px 50px;
     align-items: center;
     justify-content: center;
@@ -149,7 +149,7 @@ body {
     right: 0;
     background-color: rgb(37, 39, 41);
     color: white;
-    margin-top: 219vh;
+    margin-top: 2050px;
     padding: 0 50px 50px 50px;
     justify-content: center;
     text-align: center;
@@ -167,29 +167,41 @@ body {
     top: -12px;
   }
 
-  @media screen and (max-width: 1470px) and (min-height: 500px){
+  @media screen and (max-width: 1470px) and (max-height: 1078px){
   
     #projects-div {
       margin-top: 745px;
     }
+    
+    #projects > h1 {
+      font-size: 40px;
+    }
 
     #project-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 400px);
-        grid-row-gap: 20px;
-      }
+      display: grid;
+      grid-template-columns: repeat(2, 400px);
+      grid-row-gap: 20px;
+    }
+    
+    #contact {
+      margin-top: 1855px;
+      font-size: 1.5em;
+    }
+  
+    #contact > h1 {
+      font-size: 50px;
+    }
 
-      #contact {
-          margin-top: 1884px;
-          font-size: 1.5em;
-      }
+    #footer {
+      margin-top: 2500px;
+    }
 
-      #footer {
-        margin-top: 2555px;
-      }
+    #welcome-section {
+      padding-bottom: 420px;
+    }
   }
 
-  @media screen and (max-width: 980px) and (min-height: 500px) {
+  @media screen and (max-width: 980px) and (max-height: 1078px) {
     #navbar > ul {
         width: 15vw;
         display: block;
@@ -205,6 +217,7 @@ body {
 
     #welcome-section {
         margin-top: 112px;
+        padding-bottom: 345px;
     }
 
     #welcome-section > h1 {
@@ -226,7 +239,7 @@ body {
     }
 
     #contact {
-        margin-top: 230vh;
+        margin-top: 2230px;
         font-size: 1.5em;
     }
       
@@ -249,7 +262,13 @@ body {
     }
 
     #footer {
-      margin-top: 295vh;
+      margin-top: 2854px;
     }
     
+  }
+
+  @media screen and (max-height: 1078px) {
+    #welcome-section {
+      padding-bottom: 300px;
+    }
   }
