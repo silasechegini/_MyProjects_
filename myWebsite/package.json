@@ -5,14 +5,15 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "express": "4.17.1",
-        "jade": "*",
-        "stylus": "*",
-        "sequelize": "*",
-        "pg": "*",
-        "express-layout": "*",
         "body-parser": "*",
-        "mysql": "*"
+        "express": "4.17.1",
+        "express-layout": "*",
+        "jade": "*",
+        "jquery": "^3.5.1",
+        "mysql": "*",
+        "pg": "*",
+        "sequelize": "*",
+        "stylus": "*"
     },
     "author": "Ngozi Silas",
     "license": "ISC"

@@ -80,4 +80,4 @@ app.post('/submit', function (req, res) {
 
 app.listen(port, function(){
     console.log("app running");
-})
+});
