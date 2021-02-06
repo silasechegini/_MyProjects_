@@ -19,7 +19,6 @@ const MessageForm = (props) => {
 
     const handleChange = (event) => {
         setValue(event.target.value);
-
         isTyping(props, chatId);
     }
 
@@ -51,9 +50,9 @@ const MessageForm = (props) => {
                     onChange={handleUpload}
                 />
 
-                <burron type="submit" className="send-button">
+                <button type="submit" className="send-button">
                     <SendOutlined className="send-icon" />
-                </burron>
+                </button>
             </form>
         </div>
     )
