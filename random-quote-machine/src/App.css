@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Playfair+Display&display=swap');
+
+.fa {
+  padding: 11px;
+  width: 45px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 5px
+}
+
+.fa:hover {
+  opacity: 0.7;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+h2 {
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Mogra';
+  text-align: center
+}
