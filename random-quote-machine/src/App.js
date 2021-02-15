@@ -59,15 +59,15 @@ class App extends React.Component {
   
   render(){
     return(
-      <div class="row align-items-center container-fluid" style={{"alignContent":"center"}}>
-        <div id="quote-box" class="card p-3 bg-white embeded-responsive col-lg-4 mx-auto" style={{"marginTop":"300px"}}>
+      <div class="row align-items-center " style={{"alignContent":"center"}}>
+        <div id="quote-box" class="card p-3 bg-white mx-auto" style={{"marginTop":"15%", "width":"600px"}}>
         <div style={{"padding":"30px"}}>
           <h2 id="text"><i class="fas fa-quote-left"></i> {this.state.quote}</h2>
-          <p style={{"paddingLeft":"300px"}} id="author">-{this.state.author}</p>
+          <p style={{"paddingLeft":"50%"}} id="author">-{this.state.author}</p>
         </div>
         <div class="row mx-2">
           <div class="col-sm-1">
-            <a href="https://twitter.com/intent/tweet" class="fa fa-twitter" id="tweet-quote"></a>
+            <a target="_blank" rel='noreferrer' href="https://twitter.com/intent/tweet" class="fa fa-twitter" id="tweet-quote"></a>
           </div>
           <div class="col-sm-1">
             <a href="#" class="fa fa-tumblr" id="tumblr-quote"></a>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Playfair+Display&display=swap');
 
+.btn:hover {
+  opacity: 0.7;
+  color: white;
+}
 .fa {
   padding: 11px;
   width: 45px;
