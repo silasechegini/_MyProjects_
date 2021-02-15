@@ -33,7 +33,6 @@ class App extends React.Component {
     this.setState({
       color: "#" + Math.floor(Math.random()*16777215).toString(16)
     })
-    console.log(this.state.color)
     let myColor = this.state.color
     $(document).ready(()=>{
       $("#quote-box").parents().css("backgroundColor", myColor)
@@ -49,7 +48,9 @@ class App extends React.Component {
     }).then( data =>{
       let i = Math.floor(Math.random() * data.length);
       let quote = data[i].text;
-      let author = data[i].author;
+      let author = "Unknown";
+      data[i].author? author = data[i].author : author = "Unknown";
+      console.log(quote, author)
       this.setState({
         quote: quote,
         author: author
