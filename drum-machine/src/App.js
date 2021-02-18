@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import $ from 'jquery';
+import $, { nodeName } from 'jquery';
 
+//sound bank one - for the mixer keys
 const soundBankOne = [
   {
     keyCode: 81,
@@ -42,7 +43,7 @@ const soundBankOne = [
   {
     keyCode: 90,
     keyTrigger: 'Z',
-    id: "Kick-n'-Hat",
+    id: "Kick-n-Hat",
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
   },
   {
@@ -59,6 +60,7 @@ const soundBankOne = [
   }
 ];
 
+//sound bank two - for the mixer keys
 const soundBankTwo = [
   {
     keyCode: 81,
@@ -116,6 +118,34 @@ const soundBankTwo = [
   }
 ];
 
+const activeStyle = {
+  outline: 'none',
+  border: 'none',
+  fontSize: '24px',
+  width: '110px',
+  height: '90px',
+  fontFamily: "Mogra",
+  borderRadius: '10px',
+  backgroundColor: 'orange',
+  boxShadow: '5px 5px 5px black',
+  marginLeft: '5px',
+  marginBottom: '5px'
+};
+
+const inactiveStyle = {
+  outline: 'none',
+  border: 'none',
+  fontSize: '24px',
+  width: '110px',
+  height: '90px',
+  fontFamily: "Mogra",
+  borderRadius: '10px',
+  backgroundColor: 'grey',
+  boxShadow: '5px 5px 5px black',
+  marginLeft: '5px',
+  marginBottom: '5px'
+};
+
 $(() =>{
   $("#pwr").on("click", ()=>{
     $("#pwr").toggleClass("btn-primary float-left");
@@ -134,10 +164,13 @@ class Key extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      
+      padStyle: inactiveStyle
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.setDisplay = this.setDisplay.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.playSound = this.playSound.bind(this);
+    this.activatePad = this.activatePad.bind(this);
+    this.clearDisplay = this.clearDisplay.bind(this);
   }
   
   componentDidMount() {
@@ -151,16 +184,49 @@ class Key extends React.Component {
       this.handleClick();
     }
   }
+
+  playSound(){
+    if(this.props.power){
+      let sound = document.getElementById(this.props.note.keyTrigger);
+      sound.currentTime = 0;
+      sound.play();
+      this.activatePad();
+      this.setDisplay(this.props.note.id);
+      setTimeout(() => this.activatePad(this.props.note), 100);
+      setTimeout(() => this.clearDisplay(), 3000);
+    }
+  }
+  setDisplay(display){
+    this.props.setDisplay(display);
+  }
+
+  activatePad(e) {
+    if (this.props.power) {
+      if (this.state.padStyle.backgroundColor === 'orange') {
+        this.setState({
+          padStyle: inactiveStyle
+        });
+      } else {
+        this.setState({
+          padStyle: activeStyle
+        });
+      }
+    }
+    else {
+      this.setState({
+        padStyle: inactiveStyle
+      });
+    }
+  }
   
-  handleClick(){
-    // console.log("at handle click: ", this.props)
-    this.props.handleClick(this.props.note);
+  clearDisplay(){
+    this.props.clearDisplay();
   }
   
   render(){
     return(
       <div className="m-1">
-        <button className="keys btn btn-secondary drum-pad" id={this.props.note.id} onClick={this.handleClick}>
+        <button className="drum-pad" style={this.state.padStyle} id={this.props.note.id} onClick={this.playSound}>
           <audio
             className='clip'
             id={this.props.note.keyTrigger}
@@ -178,28 +244,37 @@ class App extends React.Component {
     this.state = {
       notes: soundBankOne,
       display: '',
-      power: 'OFF',
+      power: false,
       bank: 0,
-      sliderVal: 0.5
+      sliderVal: 0.5,
+      padStyle: inactiveStyle
     }
-    this.playSound = this.playSound.bind(this);
+    // this.activatePad = this.activatePad.bind(this);
+    // this.playSound = this.playSound.bind(this);
     this.handlePower = this.handlePower.bind(this);
     this.adjustVolume = this.adjustVolume.bind(this);
     this.clearDisplay = this.clearDisplay.bind(this);
+    this.setDisplay = this.setDisplay.bind(this);
     this.handleBank = this.handleBank.bind(this);
+  }
+
+  componentDidMount(){
+    $(() => {
+      $("#drum-machine").parents().addClass('bg-secondary');
+    })
   }
   
   handlePower(){
-    if(this.state.power === 'OFF'){
+    if(!this.state.power){
       this.setState({
-        power: 'ON',
+        power: !this.state.power,
         display: 'Powered On',
         sliderVal: 0.5
       })
       setTimeout(() => this.clearDisplay(), 4000);
-    }else if(this.state.power === 'ON'){
+    }else if(this.state.power){
       this.setState({
-        power: 'OFF',
+        power: !this.state.power,
         display: 'Powering down',
         sliderVal: 0
       })
@@ -207,23 +282,8 @@ class App extends React.Component {
     }
   }
   
-  playSound(event){
-    if(this.state.power === 'ON'){
-      let sound = document.getElementById(event.keyTrigger);
-      sound.currentTime = 0;
-      sound.play();
-      this.setState({
-        display: event.id
-      })
-      setTimeout(() => this.clearDisplay(), 3000);
-    }
-    // this.activatePad();
-    // setTimeout(() => this.activatePad(), 100);
-    // this.props.updateDisplay(this.props.clipId.replace(/-/g, ' '));
-  }
-  
   adjustVolume(e) {
-    if (this.state.power === 'ON') {
+    if (this.state.power) {
       this.setState({
         sliderVal: e.target.value,
         display: 'Volume: ' + Math.round(e.target.value * 100)
@@ -237,18 +297,26 @@ class App extends React.Component {
       display: ' '
     })
   }
+
+  setDisplay(display){
+    this.setState({
+      display: display
+    })
+  }
   
   handleBank(){
-    if(this.state.notes === soundBankOne){
-      this.setState({
-        notes: soundBankTwo,
-        display:'Smooth Piano Kit'
-      })
-    }else{
-      this.setState({
-        notes: soundBankOne,
-        display: 'Heater Kit'
-      })
+    if(this.state.power){
+      if(this.state.notes === soundBankOne){
+        this.setState({
+          notes: soundBankTwo,
+          display:'Smooth Piano Kit'
+        })
+      }else{
+        this.setState({
+          notes: soundBankOne,
+          display: 'Heater Kit'
+        })
+      }
     }
   }
   
@@ -260,16 +328,23 @@ class App extends React.Component {
     return(
       <div id="drum-machine" className="container mx-auto p-5">
         <div className="row">
-          <div className="keyscol col col-sm-6 ">
-            <div className="row">
-              {this.state.notes.map(key => {return <Key note={key} key={key.id} handleClick={this.playSound}/>})}
+          <div className="keyscol col col-sm-6 border">
+            <div className="row mx-auto">
+              {this.state.notes.map(key => {return <Key 
+              note={key} 
+              key={key.id} 
+              power={this.state.power}
+              display={this.state.display}
+              setDisplay={this.setDisplay}
+              clearDisplay={this.clearDisplay}
+              />})}
             </div>
           </div>
           <div className="col col-sm-6 ">
             <p className="labels">Power</p>
             <div className="row p-1">
               <div className="col col-sm-2 border border-dark mx-auto p-0 bg-dark">
-                <input type="button" value={this.state.power} className="col col-sm-6 btn btn-sm btn-danger float-right" id="pwr" onClick={this.handlePower}></input>
+                <input type="button" value={this.state.power} className="col col-xs-6 btn btn-sm btn-danger float-right " id="pwr" onClick={this.handlePower}></input>
               </div>
             </div >
               <p id="display" className="p-1">{this.state.display}</p>
@@ -282,7 +357,7 @@ class App extends React.Component {
             <p className="labels">Bank</p>
             <div className="row ">
               <div className="col col-sm-2 border border-dark mx-auto p-0 bg-dark">
-                <input type="button" className="col col-sm-6 btn btn-sm btn-primary float-left" id="bank" onClick={this.handleBank}></input>
+                <input type="button" className="col col-xs-6 btn btn-sm btn-primary float-left" id="bank" onClick={this.handleBank}></input>
               </div>
             </div>
           </div>
