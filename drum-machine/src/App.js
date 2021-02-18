@@ -116,15 +116,15 @@ const soundBankTwo = [
   }
 ];
 
-$(document).ready(() =>{
-  $("#pwr").click(()=>{
+$(() =>{
+  $("#pwr").on("click", ()=>{
     $("#pwr").toggleClass("btn-primary float-left");
     $("#pwr").toggleClass("btn-danger float-right");
   });
 });
 
-$(document).ready(() =>{
-  $("#bank").click(()=>{
+$(() => {
+  $("#bank").on("click", ()=>{
     $("#bank").toggleClass("float-left");
     $("#bank").toggleClass("float-right");
   });
@@ -258,15 +258,15 @@ class App extends React.Component {
       sound.volume = this.state.sliderVal;
     });}
     return(
-      <div id="drum-machine" className="container mx-auto w-50 p-5 border border-warning" style={{"backgroundColor":"#C6C8CA"}}>
+      <div id="drum-machine" className="container mx-auto p-5">
         <div className="row">
           <div className="keyscol col col-sm-6 ">
             <div className="row">
-              {this.state.notes.map(key => {return <Key note={key} handleClick={this.playSound}/>})}
+              {this.state.notes.map(key => {return <Key note={key} key={key.id} handleClick={this.playSound}/>})}
             </div>
           </div>
           <div className="col col-sm-6 ">
-            <p style={{"fontFamily":"cursive", "fontWeight":"bold", "textAlign":"center"}}>Power</p>
+            <p className="labels">Power</p>
             <div className="row p-1">
               <div className="col col-sm-2 border border-dark mx-auto p-0 bg-dark">
                 <input type="button" value={this.state.power} className="col col-sm-6 btn btn-sm btn-danger float-right" id="pwr" onClick={this.handlePower}></input>
@@ -276,10 +276,10 @@ class App extends React.Component {
             <div >
             </div>
             <div className="p-5 text-center">
-              <label for="volume">Volume</label>
-              <input type="range" class="form-range" min="0" max="1" step='0.01' id="volume" value={this.state.sliderVal} onChange={this.adjustVolume} />
+              <label className="labels">Volume</label>
+              <input type="range" className="form-range" min="0" max="1" step='0.01' id="volume" value={this.state.sliderVal} onChange={this.adjustVolume} />
             </div>
-            <p style={{"fontFamily":"cursive", "fontWeight":"bold", "textAlign":"center"}}>Bank</p>
+            <p className="labels">Bank</p>
             <div className="row ">
               <div className="col col-sm-2 border border-dark mx-auto p-0 bg-dark">
                 <input type="button" className="col col-sm-6 btn btn-sm btn-primary float-left" id="bank" onClick={this.handleBank}></input>
