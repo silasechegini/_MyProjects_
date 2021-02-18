@@ -43,3 +43,12 @@
 .orange {
   background-color: orange;
 }
+
+.switchOff {
+  width: 50%; 
+  height: 100%;
+  background-color: red; 
+  float: right;
+  border: none;
+  outline: none;
+}
