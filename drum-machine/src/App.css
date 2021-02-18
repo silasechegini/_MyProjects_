@@ -1,6 +1,7 @@
 #drum-machine {
   /* align-content: center; */
-  margin-top: 300px;
+  margin-top: 15%;
+  margin-bottom: 15%;
   border: 5px solid orange;
   background-color: #C6C8CA;
   width: 900px;
