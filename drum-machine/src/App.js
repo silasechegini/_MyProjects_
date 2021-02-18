@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import $, { nodeName } from 'jquery';
+import $ from 'jquery';
 
 //sound bank one - for the mixer keys
 const soundBankOne = [
@@ -328,7 +328,7 @@ class App extends React.Component {
     return(
       <div id="drum-machine" className="container mx-auto p-5">
         <div className="row">
-          <div className="keyscol col col-sm-6 border">
+          <div className="keyscol col col-sm-6">
             <div className="row mx-auto">
               {this.state.notes.map(key => {return <Key 
               note={key} 
