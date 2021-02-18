@@ -12,7 +12,8 @@ const activeStyle = {
     backgroundColor: 'orange',
     boxShadow: '5px 5px 5px black',
     marginLeft: '5px',
-    marginBottom: '5px'
+    marginBottom: '5px',
+    transform: 'translateY(4px)'
 };
   
 const inactiveStyle = {
@@ -26,7 +27,8 @@ const inactiveStyle = {
     backgroundColor: 'grey',
     boxShadow: '5px 5px 5px black',
     marginLeft: '5px',
-    marginBottom: '5px'
+    marginBottom: '5px',
+    transform: 'translateX(4px)'
 };
 
 class Key extends React.Component {
@@ -97,7 +99,7 @@ class Key extends React.Component {
     render(){
       return(
         <div className="m-1">
-          <button className="drum-pad" style={this.state.padStyle} id={this.props.note.id} onClick={this.playSound}>
+          <button style={this.state.padStyle} id={this.props.note.id} onClick={this.playSound}>
             <audio
               className='clip'
               id={this.props.note.keyTrigger}
