@@ -176,12 +176,14 @@ class Key extends React.Component {
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress);
   }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeyPress);
   }
+
   handleKeyPress(e) {
     if (e.keyCode === this.props.note.keyCode) {
-      this.handleClick();
+      this.playSound();
     }
   }
 
