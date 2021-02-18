@@ -1,3 +1,8 @@
+#drum-machine {
+  /* align-content: center; */
+  margin-top: 300px;
+}
+
 .keys {
   width: 120px;
   height: 90px;

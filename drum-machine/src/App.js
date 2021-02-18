@@ -258,7 +258,7 @@ class App extends React.Component {
       sound.volume = this.state.sliderVal;
     });}
     return(
-      <div id="drum-machine" className="container mx-auto w-50 p-5 border border-warning mt-5" style={{"backgroundColor":"#C6C8CA", "":""}}>
+      <div id="drum-machine" className="container mx-auto w-50 p-5 border border-warning" style={{"backgroundColor":"#C6C8CA"}}>
         <div className="row">
           <div className="keyscol col col-sm-6 ">
             <div className="row">
