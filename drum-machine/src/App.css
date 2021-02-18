@@ -1,0 +1,36 @@
+.keys {
+  width: 120px;
+  height: 90px;
+  box-shadow: 0 9px #999;
+  outline: none;
+  border: none;
+}
+.keys:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  outline: none;
+  border: none;
+}
+.keyscol {
+  justify-items: center;
+  /* background-color:  */
+}
+.well-sm{
+  width: 60px;
+  height: 30px;
+  margin: auto;
+}
+#display {
+  color: white;
+  width: 200px;
+  background-color: gray;
+  margin: 35px auto 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  max-height:30px;
+  min-height:30px;
+  text-align: center;
+  font-family: "Marker Felt, fantasy";
+  font-size: 20px;
+  font-weight: bold;
+}
